@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+//Agora funcionou Thiagão!
+
 namespace ERP_MVC
 {
     using System;
