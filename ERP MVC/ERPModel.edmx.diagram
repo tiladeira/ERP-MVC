@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b74337ffd84c44fba741833c1ad1340e" Name="Diagram1">
+        <EntityTypeShape EntityType="EPISistemaModel.Acao" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Aplicacao" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.AreaAtividade" Width="1.5" PointX="5.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Beneficio" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Cidade" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Cliente" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Departamento" Width="1.5" PointX="3.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Diluente" Width="1.5" PointX="13.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Estado" Width="1.5" PointX="1.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Funcionario" Width="1.5" PointX="6" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.LocalAplicacao" Width="1.5" PointX="11.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.LogErro" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Menu" Width="1.5" PointX="6.75" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Nivel" Width="1.5" PointX="3.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Pais" Width="1.5" PointX="1.5" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Perfil" Width="1.5" PointX="9" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Praga" Width="1.5" PointX="11.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Profissao" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.RegimeContratacao" Width="1.5" PointX="3.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Servico" Width="1.5" PointX="15.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.SubMenu" Width="1.5" PointX="9" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.sysdiagrams" Width="1.5" PointX="15.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.TipoPraga" Width="1.5" PointX="9" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.TipoServico" Width="1.5" PointX="11.25" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Usuario" Width="1.5" PointX="11.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Vetor" Width="1.5" PointX="15.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Agendamento" Width="1.5" PointX="11.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Disponibilidade" Width="1.5" PointX="9" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.FormaPagamento" Width="1.5" PointX="11.25" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.ItemPedido" Width="1.5" PointX="13.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Orcamento" Width="1.5" PointX="13.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Pedido" Width="1.5" PointX="8.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Periodo" Width="1.5" PointX="9" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.Produto" Width="1.5" PointX="11.25" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.StatusAgendamento" Width="1.5" PointX="9" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.StatusPedido" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.TipoCliente" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.TipoEndereco" Width="1.5" PointX="0.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPISistemaModel.TipoSegmento" Width="1.5" PointX="0.75" PointY="20.5" IsExpanded="true" />
+        <AssociationConnector Association="EPISistemaModel.FK_Funcionario_Beneficio" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Cidade_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Cliente_Cidade" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Cliente_Profissao" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Cliente_TipoCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Cliente_TipoEndereco" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Cliente_TipoSegmento" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Pedido_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Funcionario_Departamento" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Estado_Pais" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Funcionario_Nivel" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Funcionario_Profissao" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Funcionario_RegimeContratacao" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Usuario_Funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_ItemPedido_LocalAplicacao" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_SubMenu_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Usuario_Perfil" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_ItemPedido_Praga" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Praga_TipoPraga" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_ItemPedido_TipoServico" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Agendamento_Disponibilidade" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Agendamento_Periodo" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Agendamento_StatusAgendamento" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Orcamento_Agendamento" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Orcamento_FormaPagamento" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_ItemPedido_Pedido" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Orcamento_Pedido" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Orcamento_Produto" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.FK_Pedido_StatusPedido" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.PerfilMenu" ManuallyRouted="false" />
+        <AssociationConnector Association="EPISistemaModel.PerfilUsuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

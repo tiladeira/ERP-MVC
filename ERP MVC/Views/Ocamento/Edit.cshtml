@@ -1,0 +1,85 @@
+﻿@model ERP_MVC.Orcamento
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Orcamento</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdOrcamento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdOrcamento)
+            @Html.ValidationMessageFor(model => model.IdOrcamento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdPedido, "Pedido")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdPedido", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdPedido)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdAgendamento, "Agendamento")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdAgendamento", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdAgendamento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValorOrcamento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValorOrcamento)
+            @Html.ValidationMessageFor(model => model.ValorOrcamento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdFormaPagamento, "FormaPagamento")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdFormaPagamento", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdFormaPagamento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdProduto, "Produto")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdProduto", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdProduto)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataOrcamento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataOrcamento)
+            @Html.ValidationMessageFor(model => model.DataOrcamento)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,69 @@
+﻿@model ERP_MVC.Orcamento
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Orcamento</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdOrcamento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdOrcamento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pedido.IdPedido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pedido.IdPedido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Agendamento.HoraAgendada)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Agendamento.HoraAgendada)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ValorOrcamento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValorOrcamento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FormaPagamento.FormaPagamento1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FormaPagamento.FormaPagamento1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Produto.NomeProduto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Produto.NomeProduto)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataOrcamento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataOrcamento)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

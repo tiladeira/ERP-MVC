@@ -1,0 +1,116 @@
+﻿@model ERP_MVC.Agendamento
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Agendamento</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdAgendamento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdAgendamento)
+            @Html.ValidationMessageFor(model => model.IdAgendamento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdOrcamento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdOrcamento)
+            @Html.ValidationMessageFor(model => model.IdOrcamento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataPrevisao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataPrevisao)
+            @Html.ValidationMessageFor(model => model.DataPrevisao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdPeriodo, "Periodo")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdPeriodo", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdPeriodo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HoraAgendada)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HoraAgendada)
+            @Html.ValidationMessageFor(model => model.HoraAgendada)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HoraIni)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HoraIni)
+            @Html.ValidationMessageFor(model => model.HoraIni)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HoraFim)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HoraFim)
+            @Html.ValidationMessageFor(model => model.HoraFim)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdTecnico)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdTecnico)
+            @Html.ValidationMessageFor(model => model.IdTecnico)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdLocal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdLocal)
+            @Html.ValidationMessageFor(model => model.IdLocal)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdDisponibilidade, "Disponibilidade")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdDisponibilidade", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdDisponibilidade)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdStatus, "StatusAgendamento")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdStatus", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdStatus)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

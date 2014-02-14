@@ -1,0 +1,61 @@
+﻿@model ERP_MVC.Pedido
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Pedido</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdPedido)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdPedido)
+            @Html.ValidationMessageFor(model => model.IdPedido)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdCliente, "Cliente")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdCliente", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdCliente)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DtPedido)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DtPedido)
+            @Html.ValidationMessageFor(model => model.DtPedido)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdStatusPedido, "StatusPedido")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdStatusPedido", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdStatusPedido)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

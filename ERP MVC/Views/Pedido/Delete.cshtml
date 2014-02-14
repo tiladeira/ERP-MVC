@@ -1,0 +1,48 @@
+﻿@model ERP_MVC.Pedido
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Pedido</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdPedido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdPedido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cliente.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cliente.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DtPedido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DtPedido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StatusPedido.StatusPedido1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StatusPedido.StatusPedido1)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

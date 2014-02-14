@@ -1,0 +1,108 @@
+﻿@model ERP_MVC.Usuario
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Usuario</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdUsuario)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdUsuario)
+            @Html.ValidationMessageFor(model => model.IdUsuario)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdPerfil, "Perfil")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdPerfil", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdPerfil)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdFuncionario, "Funcionario")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdFuncionario", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdFuncionario)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Login)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Login)
+            @Html.ValidationMessageFor(model => model.Login)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Senha)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Senha)
+            @Html.ValidationMessageFor(model => model.Senha)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Status)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Status)
+            @Html.ValidationMessageFor(model => model.Status)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bloqueado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Bloqueado)
+            @Html.ValidationMessageFor(model => model.Bloqueado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataInclusao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataInclusao)
+            @Html.ValidationMessageFor(model => model.DataInclusao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataAlteracao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataAlteracao)
+            @Html.ValidationMessageFor(model => model.DataAlteracao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataUltimoAcesso)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataUltimoAcesso)
+            @Html.ValidationMessageFor(model => model.DataUltimoAcesso)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

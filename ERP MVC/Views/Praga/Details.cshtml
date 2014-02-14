@@ -1,0 +1,44 @@
+﻿@model ERP_MVC.Praga
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Praga</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdPraga)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdPraga)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoPraga.TipoPraga1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoPraga.TipoPraga1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NomePraga)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomePraga)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImgPraga)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImgPraga)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

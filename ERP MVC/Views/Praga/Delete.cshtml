@@ -1,0 +1,48 @@
+﻿@model ERP_MVC.Praga
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Excluir Praga</h2>
+
+<h3>Você tem certeza que deseja excluir este registro?</h3>
+<fieldset>
+    <legend>Praga</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdPraga)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdPraga)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoPraga.TipoPraga1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoPraga.TipoPraga1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NomePraga)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomePraga)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImgPraga)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImgPraga)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+}

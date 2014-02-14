@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ERP_MVC.Orcamento>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdOrcamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pedido.IdPedido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Agendamento.HoraAgendada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorOrcamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FormaPagamento.FormaPagamento1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Produto.NomeProduto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataOrcamento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdOrcamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pedido.IdPedido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Agendamento.HoraAgendada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorOrcamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FormaPagamento.FormaPagamento1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Produto.NomeProduto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOrcamento)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,262 @@
+﻿@model IEnumerable<ERP_MVC.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoCliente.TipoCliente1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Profissao.Profissao1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataExpedicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrgaoEmissor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CNH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeFantasia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RazaoSocial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CNPJ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoSegmento.TipoSegmento1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AreaAtividade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeSocios)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFundacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumFuncionarios)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InscEsdual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InsMunicipal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Site)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Matriz)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrupoEmpresarial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade.Cidade1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoEndereco.TipoEndereco1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CEP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PontoReferencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoneContato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CelContato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoneComlContato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataAtualizacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoCliente.TipoCliente1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Profissao.Profissao1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CPF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataExpedicao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrgaoEmissor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CNH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataNascimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeFantasia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RazaoSocial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CNPJ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoSegmento.TipoSegmento1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AreaAtividade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeSocios)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFundacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumFuncionarios)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InscEsdual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InsMunicipal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Site)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Matriz)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrupoEmpresarial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade.Cidade1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoEndereco.TipoEndereco1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Complemento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bairro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CEP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PontoReferencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoneContato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CelContato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoneComlContato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataCadastro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataAtualizacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,36 @@
+﻿@model ERP_MVC.Produto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Produto</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdProduto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdProduto)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NomeProduto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomeProduto)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Validade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Validade)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

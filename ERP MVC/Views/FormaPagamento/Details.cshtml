@@ -1,0 +1,30 @@
+﻿@model ERP_MVC.FormaPagamento
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>FormaPagamento</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdFormaPagamento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdFormaPagamento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FormaPagamento1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FormaPagamento1)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

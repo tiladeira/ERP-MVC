@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - EPI Corporate Sistemas</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+
+        <script type="text/javascript">
+            jQuery(function () {
+                $(".telefone").mask("9999-9999");
+                $(".cpf").mask("999.999.999-99");
+                $(".cep").mask("99999-999");
+                $(".data").mask("99/99/9999");
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">
+                        <img alt="EPI CORPORATE" src="~/Images/epi logo.jpg" /></p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Funcionário", "Index", "Funcionario")</li>
+                            <li>@Html.ActionLink("Usuário", "Index", "Usuario")</li>
+                            <li>@Html.ActionLink("Cliente", "Index", "Cliente")</li>
+                            <li>@Html.ActionLink("Pedido", "Index", "Pedido")</li>
+                            <li>@Html.ActionLink("Orçamento", "Index", "Ocamento")</li>
+                            <li>@Html.ActionLink("Agendamento", "Index", "Agendamento")</li>
+                            <li>@Html.ActionLink("Praga", "Index", "Praga")</li>
+                            <li>@Html.ActionLink("Produto", "Index", "Produto")</li>
+                            <li>@Html.ActionLink("Forma Pagamento", "Index", "FormaPagamento")</li>
+@*                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - EPI Corporate</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

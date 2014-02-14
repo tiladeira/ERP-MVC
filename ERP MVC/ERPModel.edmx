@@ -1,0 +1,2424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EPISistemaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="EPISistemaModelStoreContainer">
+          <EntitySet Name="Acao" EntityType="EPISistemaModel.Store.Acao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Aplicacao" EntityType="EPISistemaModel.Store.Aplicacao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AreaAtividade" EntityType="EPISistemaModel.Store.AreaAtividade" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Beneficio" EntityType="EPISistemaModel.Store.Beneficio" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cidade" EntityType="EPISistemaModel.Store.Cidade" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cliente" EntityType="EPISistemaModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Departamento" EntityType="EPISistemaModel.Store.Departamento" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Diluente" EntityType="EPISistemaModel.Store.Diluente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Estado" EntityType="EPISistemaModel.Store.Estado" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Funcionario" EntityType="EPISistemaModel.Store.Funcionario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LocalAplicacao" EntityType="EPISistemaModel.Store.LocalAplicacao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LogErro" EntityType="EPISistemaModel.Store.LogErro" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Menu" EntityType="EPISistemaModel.Store.Menu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Nivel" EntityType="EPISistemaModel.Store.Nivel" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pais" EntityType="EPISistemaModel.Store.Pais" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Perfil" EntityType="EPISistemaModel.Store.Perfil" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PerfilMenu" EntityType="EPISistemaModel.Store.PerfilMenu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PerfilUsuario" EntityType="EPISistemaModel.Store.PerfilUsuario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Praga" EntityType="EPISistemaModel.Store.Praga" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Profissao" EntityType="EPISistemaModel.Store.Profissao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RegimeContratacao" EntityType="EPISistemaModel.Store.RegimeContratacao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Servico" EntityType="EPISistemaModel.Store.Servico" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SubMenu" EntityType="EPISistemaModel.Store.SubMenu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="EPISistemaModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TipoPraga" EntityType="EPISistemaModel.Store.TipoPraga" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TipoServico" EntityType="EPISistemaModel.Store.TipoServico" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="EPISistemaModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Vetor" EntityType="EPISistemaModel.Store.Vetor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Agendamento" EntityType="EPISistemaModel.Store.Agendamento" store:Type="Tables" Schema="episistemadb" />
+          <EntitySet Name="Disponibilidade" EntityType="EPISistemaModel.Store.Disponibilidade" store:Type="Tables" Schema="episistemadb" />
+          <EntitySet Name="FormaPagamento" EntityType="EPISistemaModel.Store.FormaPagamento" store:Type="Tables" Schema="episistemadb" />
+          <EntitySet Name="ItemPedido" EntityType="EPISistemaModel.Store.ItemPedido" store:Type="Tables" Schema="episistemadb" />
+          <EntitySet Name="Orcamento" EntityType="EPISistemaModel.Store.Orcamento" store:Type="Tables" Schema="episistemadb" />
+          <EntitySet Name="Pedido" EntityType="EPISistemaModel.Store.Pedido" store:Type="Tables" Schema="episistemadb" />
+          <EntitySet Name="Periodo" EntityType="EPISistemaModel.Store.Periodo" store:Type="Tables" Schema="episistemadb" />
+          <EntitySet Name="Produto" EntityType="EPISistemaModel.Store.Produto" store:Type="Tables" Schema="episistemadb" />
+          <EntitySet Name="StatusAgendamento" EntityType="EPISistemaModel.Store.StatusAgendamento" store:Type="Tables" Schema="episistemadb" />
+          <EntitySet Name="StatusPedido" EntityType="EPISistemaModel.Store.StatusPedido" store:Type="Tables" Schema="episistemadb" />
+          <EntitySet Name="TipoCliente" EntityType="EPISistemaModel.Store.TipoCliente" store:Type="Tables" Schema="episistemadb" />
+          <EntitySet Name="TipoEndereco" EntityType="EPISistemaModel.Store.TipoEndereco" store:Type="Tables" Schema="episistemadb" />
+          <EntitySet Name="TipoSegmento" EntityType="EPISistemaModel.Store.TipoSegmento" store:Type="Tables" Schema="episistemadb" />
+          <AssociationSet Name="FK_Agendamento_Disponibilidade" Association="EPISistemaModel.Store.FK_Agendamento_Disponibilidade">
+            <End Role="Disponibilidade" EntitySet="Disponibilidade" />
+            <End Role="Agendamento" EntitySet="Agendamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agendamento_Periodo" Association="EPISistemaModel.Store.FK_Agendamento_Periodo">
+            <End Role="Periodo" EntitySet="Periodo" />
+            <End Role="Agendamento" EntitySet="Agendamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agendamento_StatusAgendamento" Association="EPISistemaModel.Store.FK_Agendamento_StatusAgendamento">
+            <End Role="StatusAgendamento" EntitySet="StatusAgendamento" />
+            <End Role="Agendamento" EntitySet="Agendamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cidade_Estado" Association="EPISistemaModel.Store.FK_Cidade_Estado">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Cidade" EntitySet="Cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Cidade" Association="EPISistemaModel.Store.FK_Cliente_Cidade">
+            <End Role="Cidade" EntitySet="Cidade" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Profissao" Association="EPISistemaModel.Store.FK_Cliente_Profissao">
+            <End Role="Profissao" EntitySet="Profissao" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_TipoCliente" Association="EPISistemaModel.Store.FK_Cliente_TipoCliente">
+            <End Role="TipoCliente" EntitySet="TipoCliente" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_TipoEndereco" Association="EPISistemaModel.Store.FK_Cliente_TipoEndereco">
+            <End Role="TipoEndereco" EntitySet="TipoEndereco" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_TipoSegmento" Association="EPISistemaModel.Store.FK_Cliente_TipoSegmento">
+            <End Role="TipoSegmento" EntitySet="TipoSegmento" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estado_Pais" Association="EPISistemaModel.Store.FK_Estado_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Estado" EntitySet="Estado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_Beneficio" Association="EPISistemaModel.Store.FK_Funcionario_Beneficio">
+            <End Role="Beneficio" EntitySet="Beneficio" />
+            <End Role="Funcionario" EntitySet="Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_Departamento" Association="EPISistemaModel.Store.FK_Funcionario_Departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Funcionario" EntitySet="Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_Nivel" Association="EPISistemaModel.Store.FK_Funcionario_Nivel">
+            <End Role="Nivel" EntitySet="Nivel" />
+            <End Role="Funcionario" EntitySet="Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_Profissao" Association="EPISistemaModel.Store.FK_Funcionario_Profissao">
+            <End Role="Profissao" EntitySet="Profissao" />
+            <End Role="Funcionario" EntitySet="Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_RegimeContratacao" Association="EPISistemaModel.Store.FK_Funcionario_RegimeContratacao">
+            <End Role="RegimeContratacao" EntitySet="RegimeContratacao" />
+            <End Role="Funcionario" EntitySet="Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemPedido_LocalAplicacao" Association="EPISistemaModel.Store.FK_ItemPedido_LocalAplicacao">
+            <End Role="LocalAplicacao" EntitySet="LocalAplicacao" />
+            <End Role="ItemPedido" EntitySet="ItemPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemPedido_Pedido" Association="EPISistemaModel.Store.FK_ItemPedido_Pedido">
+            <End Role="Pedido" EntitySet="Pedido" />
+            <End Role="ItemPedido" EntitySet="ItemPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemPedido_Praga" Association="EPISistemaModel.Store.FK_ItemPedido_Praga">
+            <End Role="Praga" EntitySet="Praga" />
+            <End Role="ItemPedido" EntitySet="ItemPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemPedido_TipoServico" Association="EPISistemaModel.Store.FK_ItemPedido_TipoServico">
+            <End Role="TipoServico" EntitySet="TipoServico" />
+            <End Role="ItemPedido" EntitySet="ItemPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orcamento_Agendamento" Association="EPISistemaModel.Store.FK_Orcamento_Agendamento">
+            <End Role="Agendamento" EntitySet="Agendamento" />
+            <End Role="Orcamento" EntitySet="Orcamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orcamento_FormaPagamento" Association="EPISistemaModel.Store.FK_Orcamento_FormaPagamento">
+            <End Role="FormaPagamento" EntitySet="FormaPagamento" />
+            <End Role="Orcamento" EntitySet="Orcamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orcamento_Pedido" Association="EPISistemaModel.Store.FK_Orcamento_Pedido">
+            <End Role="Pedido" EntitySet="Pedido" />
+            <End Role="Orcamento" EntitySet="Orcamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orcamento_Produto" Association="EPISistemaModel.Store.FK_Orcamento_Produto">
+            <End Role="Produto" EntitySet="Produto" />
+            <End Role="Orcamento" EntitySet="Orcamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedido_Cliente" Association="EPISistemaModel.Store.FK_Pedido_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Pedido" EntitySet="Pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedido_StatusPedido" Association="EPISistemaModel.Store.FK_Pedido_StatusPedido">
+            <End Role="StatusPedido" EntitySet="StatusPedido" />
+            <End Role="Pedido" EntitySet="Pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilMenu_Menu" Association="EPISistemaModel.Store.FK_PerfilMenu_Menu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="PerfilMenu" EntitySet="PerfilMenu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilMenu_Perfil" Association="EPISistemaModel.Store.FK_PerfilMenu_Perfil">
+            <End Role="Perfil" EntitySet="Perfil" />
+            <End Role="PerfilMenu" EntitySet="PerfilMenu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilUsuario_Perfil" Association="EPISistemaModel.Store.FK_PerfilUsuario_Perfil">
+            <End Role="Perfil" EntitySet="Perfil" />
+            <End Role="PerfilUsuario" EntitySet="PerfilUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilUsuario_Usuario" Association="EPISistemaModel.Store.FK_PerfilUsuario_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="PerfilUsuario" EntitySet="PerfilUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Praga_TipoPraga" Association="EPISistemaModel.Store.FK_Praga_TipoPraga">
+            <End Role="TipoPraga" EntitySet="TipoPraga" />
+            <End Role="Praga" EntitySet="Praga" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubMenu_Menu" Association="EPISistemaModel.Store.FK_SubMenu_Menu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="SubMenu" EntitySet="SubMenu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Funcionario" Association="EPISistemaModel.Store.FK_Usuario_Funcionario">
+            <End Role="Funcionario" EntitySet="Funcionario" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Perfil" Association="EPISistemaModel.Store.FK_Usuario_Perfil">
+            <End Role="Perfil" EntitySet="Perfil" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Acao">
+          <Key>
+            <PropertyRef Name="IdAcao" />
+          </Key>
+          <Property Name="IdAcao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Acao" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Aplicacao">
+          <Key>
+            <PropertyRef Name="IdAplicacao" />
+          </Key>
+          <Property Name="IdAplicacao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Aplicacao" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AreaAtividade">
+          <Key>
+            <PropertyRef Name="IdAreaAtividade" />
+          </Key>
+          <Property Name="IdAreaAtividade" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AreaAtividade" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Beneficio">
+          <Key>
+            <PropertyRef Name="IdBeneficio" />
+          </Key>
+          <Property Name="IdBeneficio" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdFuncionario" Type="int" Nullable="false" />
+          <Property Name="ValorSalario" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="ValorEncargos" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="ValorBeneficios" Type="decimal" Scale="2" />
+        </EntityType>
+        <EntityType Name="Cidade">
+          <Key>
+            <PropertyRef Name="IdCidade" />
+          </Key>
+          <Property Name="IdCidade" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdEstado" Type="int" Nullable="false" />
+          <Property Name="Cidade" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="IdCliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdTipoCliente" Type="int" />
+          <Property Name="IdProfisao" Type="int" />
+          <Property Name="Nome" Type="varchar" MaxLength="30" />
+          <Property Name="CPF" Type="varchar" MaxLength="14" />
+          <Property Name="RG" Type="varchar" MaxLength="12" />
+          <Property Name="DataExpedicao" Type="datetime" />
+          <Property Name="OrgaoEmissor" Type="varchar" MaxLength="6" />
+          <Property Name="CNH" Type="varchar" MaxLength="11" />
+          <Property Name="DataNascimento" Type="datetime" />
+          <Property Name="Sexo" Type="varchar" MaxLength="1" />
+          <Property Name="EMail" Type="varchar" MaxLength="50" />
+          <Property Name="NomeFantasia" Type="varchar" MaxLength="80" />
+          <Property Name="RazaoSocial" Type="varchar" MaxLength="80" />
+          <Property Name="CNPJ" Type="varchar" MaxLength="18" />
+          <Property Name="IdTipoSegmento" Type="int" />
+          <Property Name="AreaAtividade" Type="nvarchar" MaxLength="60" />
+          <Property Name="NomeSocios" Type="varchar" MaxLength="255" />
+          <Property Name="DataFundacao" Type="datetime" />
+          <Property Name="NumFuncionarios" Type="int" />
+          <Property Name="InscEsdual" Type="nvarchar" MaxLength="40" />
+          <Property Name="InsMunicipal" Type="nvarchar" MaxLength="40" />
+          <Property Name="Site" Type="nvarchar" MaxLength="100" />
+          <Property Name="Matriz" Type="bit" />
+          <Property Name="GrupoEmpresarial" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdCidade" Type="int" />
+          <Property Name="IdTipoEndereco" Type="int" />
+          <Property Name="Endereco" Type="varchar" MaxLength="100" />
+          <Property Name="Numero" Type="varchar" MaxLength="50" />
+          <Property Name="Complemento" Type="varchar" MaxLength="20" />
+          <Property Name="Bairro" Type="varchar" MaxLength="20" />
+          <Property Name="CEP" Type="varchar" MaxLength="9" />
+          <Property Name="PontoReferencia" Type="varchar" MaxLength="100" />
+          <Property Name="FoneContato" Type="varchar" MaxLength="16" />
+          <Property Name="CelContato" Type="varchar" MaxLength="16" />
+          <Property Name="FoneComlContato" Type="varchar" MaxLength="16" />
+          <Property Name="DataCadastro" Type="datetime" />
+          <Property Name="DataAtualizacao" Type="datetime" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="IdDepartamento" />
+          </Key>
+          <Property Name="IdDepartamento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Departamento" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Diluente">
+          <Key>
+            <PropertyRef Name="IdDiluente" />
+          </Key>
+          <Property Name="IdDiluente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Diluente" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descricao" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="IdEstado" />
+          </Key>
+          <Property Name="IdEstado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdPais" Type="int" Nullable="false" />
+          <Property Name="Sigla" Type="varchar" Nullable="false" MaxLength="2" />
+          <Property Name="Estado" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Funcionario">
+          <Key>
+            <PropertyRef Name="IdFuncionario" />
+          </Key>
+          <Property Name="IdFuncionario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DataNascimento" Type="datetime" Nullable="false" />
+          <Property Name="Sexo" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="CPF" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="RG" Type="nchar" Nullable="false" MaxLength="12" />
+          <Property Name="OrgEmissRG" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="DataEmissRG" Type="datetime" Nullable="false" />
+          <Property Name="CNH" Type="varchar" MaxLength="11" />
+          <Property Name="IdDepartamento" Type="int" Nullable="false" />
+          <Property Name="IdProfissao" Type="int" Nullable="false" />
+          <Property Name="IdNivel" Type="int" Nullable="false" />
+          <Property Name="IdRegimeContratacao" Type="int" Nullable="false" />
+          <Property Name="DataAdmissao" Type="datetime" Nullable="false" />
+          <Property Name="IdBeneficio" Type="int" />
+          <Property Name="DataInclusao" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="LocalAplicacao">
+          <Key>
+            <PropertyRef Name="IdLocalAplicacao" />
+          </Key>
+          <Property Name="IdLocalAplicacao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LocalAplicacao" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LogErro">
+          <Key>
+            <PropertyRef Name="IdLog" />
+          </Key>
+          <Property Name="IdLog" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Erro" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Pagina" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Linha" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DataHora" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="IdMenu" />
+          </Key>
+          <Property Name="IdMenu" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Menu" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Link" Type="varchar" Nullable="false" MaxLength="300" />
+          <Property Name="Target" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Nivel">
+          <Key>
+            <PropertyRef Name="IdNivel" />
+          </Key>
+          <Property Name="IdNivel" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nivel" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Pais">
+          <Key>
+            <PropertyRef Name="IdPais" />
+          </Key>
+          <Property Name="IdPais" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Sigla" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="Pais" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="IdPerfil" />
+          </Key>
+          <Property Name="IdPerfil" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Perfil" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Descricao" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PerfilMenu">
+          <Key>
+            <PropertyRef Name="IdPerfil" />
+            <PropertyRef Name="IdMenu" />
+          </Key>
+          <Property Name="IdPerfil" Type="int" Nullable="false" />
+          <Property Name="IdMenu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PerfilUsuario">
+          <Key>
+            <PropertyRef Name="IdPerfil" />
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdPerfil" Type="int" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Praga">
+          <Key>
+            <PropertyRef Name="IdPraga" />
+          </Key>
+          <Property Name="IdPraga" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdTipoPraga" Type="int" Nullable="false" />
+          <Property Name="NomePraga" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ImgPraga" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Profissao">
+          <Key>
+            <PropertyRef Name="IdProfissao" />
+          </Key>
+          <Property Name="IdProfissao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CodProfissao" Type="int" Nullable="false" />
+          <Property Name="Profissao" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RegimeContratacao">
+          <Key>
+            <PropertyRef Name="IdRegimeContratacao" />
+          </Key>
+          <Property Name="IdRegimeContratacao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RegimeContratacao" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Servico">
+          <Key>
+            <PropertyRef Name="IdServico" />
+          </Key>
+          <Property Name="IdServico" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="IdPedido" Type="int" Nullable="false" />
+          <Property Name="DataServico" Type="datetime" Nullable="false" />
+          <Property Name="Periodo" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="IdTecnico" Type="int" Nullable="false" />
+          <Property Name="HrInicio" Type="datetime" Nullable="false" />
+          <Property Name="HrFim" Type="datetime" Nullable="false" />
+          <Property Name="IdLocal" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SubMenu">
+          <Key>
+            <PropertyRef Name="IdSubMenu" />
+          </Key>
+          <Property Name="IdSubMenu" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdMenu" Type="int" Nullable="false" />
+          <Property Name="SubMenu" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Link" Type="varchar" MaxLength="300" />
+          <Property Name="Target" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TipoPraga">
+          <Key>
+            <PropertyRef Name="IdTipoPraga" />
+          </Key>
+          <Property Name="IdTipoPraga" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TipoPraga" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TipoServico">
+          <Key>
+            <PropertyRef Name="IdTipoServico" />
+          </Key>
+          <Property Name="IdTipoServico" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TipoServico" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdPerfil" Type="int" Nullable="false" />
+          <Property Name="IdFuncionario" Type="int" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Senha" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Bloqueado" Type="bit" Nullable="false" />
+          <Property Name="DataInclusao" Type="datetime" Nullable="false" />
+          <Property Name="DataAlteracao" Type="datetime" />
+          <Property Name="DataUltimoAcesso" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Vetor">
+          <Key>
+            <PropertyRef Name="IdVetor" />
+          </Key>
+          <Property Name="IdVetor" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Vetor" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descricao" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Agendamento">
+          <Key>
+            <PropertyRef Name="IdAgendamento" />
+          </Key>
+          <Property Name="IdAgendamento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdOrcamento" Type="int" Nullable="false" />
+          <Property Name="DataPrevisao" Type="datetime" Nullable="false" />
+          <Property Name="IdPeriodo" Type="int" Nullable="false" />
+          <Property Name="HoraAgendada" Type="nvarchar" Nullable="false" MaxLength="8" />
+          <Property Name="HoraIni" Type="nvarchar" Nullable="false" MaxLength="8" />
+          <Property Name="HoraFim" Type="nvarchar" Nullable="false" MaxLength="8" />
+          <Property Name="IdTecnico" Type="int" Nullable="false" />
+          <Property Name="IdLocal" Type="int" Nullable="false" />
+          <Property Name="IdDisponibilidade" Type="int" Nullable="false" />
+          <Property Name="IdStatus" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Disponibilidade">
+          <Key>
+            <PropertyRef Name="IdDisponibilidade" />
+          </Key>
+          <Property Name="IdDisponibilidade" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Disponibilidade" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="FormaPagamento">
+          <Key>
+            <PropertyRef Name="IdFormaPagamento" />
+          </Key>
+          <Property Name="IdFormaPagamento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FormaPagamento" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ItemPedido">
+          <Key>
+            <PropertyRef Name="IdItemPedido" />
+          </Key>
+          <Property Name="IdItemPedido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdPedido" Type="int" Nullable="false" />
+          <Property Name="IdPraga" Type="int" Nullable="false" />
+          <Property Name="IdEnderecoAplicacao" Type="int" />
+          <Property Name="IdLocalAplicacao" Type="int" Nullable="false" />
+          <Property Name="IdTipoServico" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orcamento">
+          <Key>
+            <PropertyRef Name="IdOrcamento" />
+          </Key>
+          <Property Name="IdOrcamento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdPedido" Type="int" Nullable="false" />
+          <Property Name="IdAgendamento" Type="int" Nullable="false" />
+          <Property Name="ValorOrcamento" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="IdFormaPagamento" Type="int" Nullable="false" />
+          <Property Name="IdProduto" Type="int" Nullable="false" />
+          <Property Name="DataOrcamento" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pedido">
+          <Key>
+            <PropertyRef Name="IdPedido" />
+          </Key>
+          <Property Name="IdPedido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdCliente" Type="int" />
+          <Property Name="DtPedido" Type="datetime" />
+          <Property Name="IdStatusPedido" Type="int" />
+        </EntityType>
+        <EntityType Name="Periodo">
+          <Key>
+            <PropertyRef Name="IdPeriodo" />
+          </Key>
+          <Property Name="IdPeriodo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Periodo" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Produto">
+          <Key>
+            <PropertyRef Name="IdProduto" />
+          </Key>
+          <Property Name="IdProduto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NomeProduto" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="Validade" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusAgendamento">
+          <Key>
+            <PropertyRef Name="IdStatusAgendamento" />
+          </Key>
+          <Property Name="IdStatusAgendamento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="StatusPedido">
+          <Key>
+            <PropertyRef Name="IdStatusPedido" />
+          </Key>
+          <Property Name="IdStatusPedido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StatusPedido" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TipoCliente">
+          <Key>
+            <PropertyRef Name="IdTipoCliente" />
+          </Key>
+          <Property Name="IdTipoCliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TipoCliente" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TipoEndereco">
+          <Key>
+            <PropertyRef Name="IdTipoEndereco" />
+          </Key>
+          <Property Name="IdTipoEndereco" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TipoEndereco" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TipoSegmento">
+          <Key>
+            <PropertyRef Name="IdTipoSegmento" />
+          </Key>
+          <Property Name="IdTipoSegmento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TipoSegmento" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK_Agendamento_Disponibilidade">
+          <End Role="Disponibilidade" Type="EPISistemaModel.Store.Disponibilidade" Multiplicity="1" />
+          <End Role="Agendamento" Type="EPISistemaModel.Store.Agendamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Disponibilidade">
+              <PropertyRef Name="IdDisponibilidade" />
+            </Principal>
+            <Dependent Role="Agendamento">
+              <PropertyRef Name="IdDisponibilidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agendamento_Periodo">
+          <End Role="Periodo" Type="EPISistemaModel.Store.Periodo" Multiplicity="1" />
+          <End Role="Agendamento" Type="EPISistemaModel.Store.Agendamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periodo">
+              <PropertyRef Name="IdPeriodo" />
+            </Principal>
+            <Dependent Role="Agendamento">
+              <PropertyRef Name="IdPeriodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agendamento_StatusAgendamento">
+          <End Role="StatusAgendamento" Type="EPISistemaModel.Store.StatusAgendamento" Multiplicity="1" />
+          <End Role="Agendamento" Type="EPISistemaModel.Store.Agendamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusAgendamento">
+              <PropertyRef Name="IdStatusAgendamento" />
+            </Principal>
+            <Dependent Role="Agendamento">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cidade_Estado">
+          <End Role="Estado" Type="EPISistemaModel.Store.Estado" Multiplicity="1" />
+          <End Role="Cidade" Type="EPISistemaModel.Store.Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="IdEstado" />
+            </Principal>
+            <Dependent Role="Cidade">
+              <PropertyRef Name="IdEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Cidade">
+          <End Role="Cidade" Type="EPISistemaModel.Store.Cidade" Multiplicity="0..1" />
+          <End Role="Cliente" Type="EPISistemaModel.Store.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cidade">
+              <PropertyRef Name="IdCidade" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdCidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Profissao">
+          <End Role="Profissao" Type="EPISistemaModel.Store.Profissao" Multiplicity="0..1" />
+          <End Role="Cliente" Type="EPISistemaModel.Store.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profissao">
+              <PropertyRef Name="IdProfissao" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdProfisao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_TipoCliente">
+          <End Role="TipoCliente" Type="EPISistemaModel.Store.TipoCliente" Multiplicity="0..1" />
+          <End Role="Cliente" Type="EPISistemaModel.Store.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoCliente">
+              <PropertyRef Name="IdTipoCliente" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdTipoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_TipoEndereco">
+          <End Role="TipoEndereco" Type="EPISistemaModel.Store.TipoEndereco" Multiplicity="0..1" />
+          <End Role="Cliente" Type="EPISistemaModel.Store.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEndereco">
+              <PropertyRef Name="IdTipoEndereco" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdTipoEndereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_TipoSegmento">
+          <End Role="TipoSegmento" Type="EPISistemaModel.Store.TipoSegmento" Multiplicity="0..1" />
+          <End Role="Cliente" Type="EPISistemaModel.Store.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSegmento">
+              <PropertyRef Name="IdTipoSegmento" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdTipoSegmento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estado_Pais">
+          <End Role="Pais" Type="EPISistemaModel.Store.Pais" Multiplicity="1" />
+          <End Role="Estado" Type="EPISistemaModel.Store.Estado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="IdPais" />
+            </Principal>
+            <Dependent Role="Estado">
+              <PropertyRef Name="IdPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funcionario_Beneficio">
+          <End Role="Beneficio" Type="EPISistemaModel.Store.Beneficio" Multiplicity="0..1" />
+          <End Role="Funcionario" Type="EPISistemaModel.Store.Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Beneficio">
+              <PropertyRef Name="IdBeneficio" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IdBeneficio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funcionario_Departamento">
+          <End Role="Departamento" Type="EPISistemaModel.Store.Departamento" Multiplicity="1" />
+          <End Role="Funcionario" Type="EPISistemaModel.Store.Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="IdDepartamento" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IdDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funcionario_Nivel">
+          <End Role="Nivel" Type="EPISistemaModel.Store.Nivel" Multiplicity="1" />
+          <End Role="Funcionario" Type="EPISistemaModel.Store.Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nivel">
+              <PropertyRef Name="IdNivel" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IdNivel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funcionario_Profissao">
+          <End Role="Profissao" Type="EPISistemaModel.Store.Profissao" Multiplicity="1" />
+          <End Role="Funcionario" Type="EPISistemaModel.Store.Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profissao">
+              <PropertyRef Name="IdProfissao" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IdProfissao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funcionario_RegimeContratacao">
+          <End Role="RegimeContratacao" Type="EPISistemaModel.Store.RegimeContratacao" Multiplicity="1" />
+          <End Role="Funcionario" Type="EPISistemaModel.Store.Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegimeContratacao">
+              <PropertyRef Name="IdRegimeContratacao" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IdRegimeContratacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemPedido_LocalAplicacao">
+          <End Role="LocalAplicacao" Type="EPISistemaModel.Store.LocalAplicacao" Multiplicity="1" />
+          <End Role="ItemPedido" Type="EPISistemaModel.Store.ItemPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocalAplicacao">
+              <PropertyRef Name="IdLocalAplicacao" />
+            </Principal>
+            <Dependent Role="ItemPedido">
+              <PropertyRef Name="IdLocalAplicacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemPedido_Pedido">
+          <End Role="Pedido" Type="EPISistemaModel.Store.Pedido" Multiplicity="1" />
+          <End Role="ItemPedido" Type="EPISistemaModel.Store.ItemPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedido">
+              <PropertyRef Name="IdPedido" />
+            </Principal>
+            <Dependent Role="ItemPedido">
+              <PropertyRef Name="IdPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemPedido_Praga">
+          <End Role="Praga" Type="EPISistemaModel.Store.Praga" Multiplicity="1" />
+          <End Role="ItemPedido" Type="EPISistemaModel.Store.ItemPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Praga">
+              <PropertyRef Name="IdPraga" />
+            </Principal>
+            <Dependent Role="ItemPedido">
+              <PropertyRef Name="IdPraga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemPedido_TipoServico">
+          <End Role="TipoServico" Type="EPISistemaModel.Store.TipoServico" Multiplicity="1" />
+          <End Role="ItemPedido" Type="EPISistemaModel.Store.ItemPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoServico">
+              <PropertyRef Name="IdTipoServico" />
+            </Principal>
+            <Dependent Role="ItemPedido">
+              <PropertyRef Name="IdTipoServico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orcamento_Agendamento">
+          <End Role="Agendamento" Type="EPISistemaModel.Store.Agendamento" Multiplicity="1" />
+          <End Role="Orcamento" Type="EPISistemaModel.Store.Orcamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agendamento">
+              <PropertyRef Name="IdAgendamento" />
+            </Principal>
+            <Dependent Role="Orcamento">
+              <PropertyRef Name="IdAgendamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orcamento_FormaPagamento">
+          <End Role="FormaPagamento" Type="EPISistemaModel.Store.FormaPagamento" Multiplicity="1" />
+          <End Role="Orcamento" Type="EPISistemaModel.Store.Orcamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormaPagamento">
+              <PropertyRef Name="IdFormaPagamento" />
+            </Principal>
+            <Dependent Role="Orcamento">
+              <PropertyRef Name="IdFormaPagamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orcamento_Pedido">
+          <End Role="Pedido" Type="EPISistemaModel.Store.Pedido" Multiplicity="1" />
+          <End Role="Orcamento" Type="EPISistemaModel.Store.Orcamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedido">
+              <PropertyRef Name="IdPedido" />
+            </Principal>
+            <Dependent Role="Orcamento">
+              <PropertyRef Name="IdPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orcamento_Produto">
+          <End Role="Produto" Type="EPISistemaModel.Store.Produto" Multiplicity="1" />
+          <End Role="Orcamento" Type="EPISistemaModel.Store.Orcamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produto">
+              <PropertyRef Name="IdProduto" />
+            </Principal>
+            <Dependent Role="Orcamento">
+              <PropertyRef Name="IdProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedido_Cliente">
+          <End Role="Cliente" Type="EPISistemaModel.Store.Cliente" Multiplicity="0..1" />
+          <End Role="Pedido" Type="EPISistemaModel.Store.Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedido_StatusPedido">
+          <End Role="StatusPedido" Type="EPISistemaModel.Store.StatusPedido" Multiplicity="0..1" />
+          <End Role="Pedido" Type="EPISistemaModel.Store.Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusPedido">
+              <PropertyRef Name="IdStatusPedido" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="IdStatusPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilMenu_Menu">
+          <End Role="Menu" Type="EPISistemaModel.Store.Menu" Multiplicity="1" />
+          <End Role="PerfilMenu" Type="EPISistemaModel.Store.PerfilMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="IdMenu" />
+            </Principal>
+            <Dependent Role="PerfilMenu">
+              <PropertyRef Name="IdMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilMenu_Perfil">
+          <End Role="Perfil" Type="EPISistemaModel.Store.Perfil" Multiplicity="1" />
+          <End Role="PerfilMenu" Type="EPISistemaModel.Store.PerfilMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfil">
+              <PropertyRef Name="IdPerfil" />
+            </Principal>
+            <Dependent Role="PerfilMenu">
+              <PropertyRef Name="IdPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilUsuario_Perfil">
+          <End Role="Perfil" Type="EPISistemaModel.Store.Perfil" Multiplicity="1" />
+          <End Role="PerfilUsuario" Type="EPISistemaModel.Store.PerfilUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfil">
+              <PropertyRef Name="IdPerfil" />
+            </Principal>
+            <Dependent Role="PerfilUsuario">
+              <PropertyRef Name="IdPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilUsuario_Usuario">
+          <End Role="Usuario" Type="EPISistemaModel.Store.Usuario" Multiplicity="1" />
+          <End Role="PerfilUsuario" Type="EPISistemaModel.Store.PerfilUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="PerfilUsuario">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Praga_TipoPraga">
+          <End Role="TipoPraga" Type="EPISistemaModel.Store.TipoPraga" Multiplicity="1" />
+          <End Role="Praga" Type="EPISistemaModel.Store.Praga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoPraga">
+              <PropertyRef Name="IdTipoPraga" />
+            </Principal>
+            <Dependent Role="Praga">
+              <PropertyRef Name="IdTipoPraga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubMenu_Menu">
+          <End Role="Menu" Type="EPISistemaModel.Store.Menu" Multiplicity="1" />
+          <End Role="SubMenu" Type="EPISistemaModel.Store.SubMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="IdMenu" />
+            </Principal>
+            <Dependent Role="SubMenu">
+              <PropertyRef Name="IdMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Funcionario">
+          <End Role="Funcionario" Type="EPISistemaModel.Store.Funcionario" Multiplicity="1" />
+          <End Role="Usuario" Type="EPISistemaModel.Store.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionario">
+              <PropertyRef Name="IdFuncionario" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IdFuncionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Perfil">
+          <End Role="Perfil" Type="EPISistemaModel.Store.Perfil" Multiplicity="1" />
+          <End Role="Usuario" Type="EPISistemaModel.Store.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfil">
+              <PropertyRef Name="IdPerfil" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IdPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EPISistemaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EPISistemaEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Acao" EntityType="EPISistemaModel.Acao" />
+          <EntitySet Name="Aplicacao" EntityType="EPISistemaModel.Aplicacao" />
+          <EntitySet Name="AreaAtividade" EntityType="EPISistemaModel.AreaAtividade" />
+          <EntitySet Name="Beneficio" EntityType="EPISistemaModel.Beneficio" />
+          <EntitySet Name="Cidade" EntityType="EPISistemaModel.Cidade" />
+          <EntitySet Name="Cliente" EntityType="EPISistemaModel.Cliente" />
+          <EntitySet Name="Departamento" EntityType="EPISistemaModel.Departamento" />
+          <EntitySet Name="Diluente" EntityType="EPISistemaModel.Diluente" />
+          <EntitySet Name="Estado" EntityType="EPISistemaModel.Estado" />
+          <EntitySet Name="Funcionario" EntityType="EPISistemaModel.Funcionario" />
+          <EntitySet Name="LocalAplicacao" EntityType="EPISistemaModel.LocalAplicacao" />
+          <EntitySet Name="LogErro" EntityType="EPISistemaModel.LogErro" />
+          <EntitySet Name="Menu" EntityType="EPISistemaModel.Menu" />
+          <EntitySet Name="Nivel" EntityType="EPISistemaModel.Nivel" />
+          <EntitySet Name="Pais" EntityType="EPISistemaModel.Pais" />
+          <EntitySet Name="Perfil" EntityType="EPISistemaModel.Perfil" />
+          <EntitySet Name="Praga" EntityType="EPISistemaModel.Praga" />
+          <EntitySet Name="Profissao" EntityType="EPISistemaModel.Profissao" />
+          <EntitySet Name="RegimeContratacao" EntityType="EPISistemaModel.RegimeContratacao" />
+          <EntitySet Name="Servico" EntityType="EPISistemaModel.Servico" />
+          <EntitySet Name="SubMenu" EntityType="EPISistemaModel.SubMenu" />
+          <EntitySet Name="sysdiagrams" EntityType="EPISistemaModel.sysdiagrams" />
+          <EntitySet Name="TipoPraga" EntityType="EPISistemaModel.TipoPraga" />
+          <EntitySet Name="TipoServico" EntityType="EPISistemaModel.TipoServico" />
+          <EntitySet Name="Usuario" EntityType="EPISistemaModel.Usuario" />
+          <EntitySet Name="Vetor" EntityType="EPISistemaModel.Vetor" />
+          <EntitySet Name="Agendamento" EntityType="EPISistemaModel.Agendamento" />
+          <EntitySet Name="Disponibilidade" EntityType="EPISistemaModel.Disponibilidade" />
+          <EntitySet Name="FormaPagamento" EntityType="EPISistemaModel.FormaPagamento" />
+          <EntitySet Name="ItemPedido" EntityType="EPISistemaModel.ItemPedido" />
+          <EntitySet Name="Orcamento" EntityType="EPISistemaModel.Orcamento" />
+          <EntitySet Name="Pedido" EntityType="EPISistemaModel.Pedido" />
+          <EntitySet Name="Periodo" EntityType="EPISistemaModel.Periodo" />
+          <EntitySet Name="Produto" EntityType="EPISistemaModel.Produto" />
+          <EntitySet Name="StatusAgendamento" EntityType="EPISistemaModel.StatusAgendamento" />
+          <EntitySet Name="StatusPedido" EntityType="EPISistemaModel.StatusPedido" />
+          <EntitySet Name="TipoCliente" EntityType="EPISistemaModel.TipoCliente" />
+          <EntitySet Name="TipoEndereco" EntityType="EPISistemaModel.TipoEndereco" />
+          <EntitySet Name="TipoSegmento" EntityType="EPISistemaModel.TipoSegmento" />
+          <AssociationSet Name="FK_Funcionario_Beneficio" Association="EPISistemaModel.FK_Funcionario_Beneficio">
+            <End Role="Beneficio" EntitySet="Beneficio" />
+            <End Role="Funcionario" EntitySet="Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cidade_Estado" Association="EPISistemaModel.FK_Cidade_Estado">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Cidade" EntitySet="Cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Cidade" Association="EPISistemaModel.FK_Cliente_Cidade">
+            <End Role="Cidade" EntitySet="Cidade" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Profissao" Association="EPISistemaModel.FK_Cliente_Profissao">
+            <End Role="Profissao" EntitySet="Profissao" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_TipoCliente" Association="EPISistemaModel.FK_Cliente_TipoCliente">
+            <End Role="TipoCliente" EntitySet="TipoCliente" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_TipoEndereco" Association="EPISistemaModel.FK_Cliente_TipoEndereco">
+            <End Role="TipoEndereco" EntitySet="TipoEndereco" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_TipoSegmento" Association="EPISistemaModel.FK_Cliente_TipoSegmento">
+            <End Role="TipoSegmento" EntitySet="TipoSegmento" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedido_Cliente" Association="EPISistemaModel.FK_Pedido_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Pedido" EntitySet="Pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_Departamento" Association="EPISistemaModel.FK_Funcionario_Departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Funcionario" EntitySet="Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estado_Pais" Association="EPISistemaModel.FK_Estado_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Estado" EntitySet="Estado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_Nivel" Association="EPISistemaModel.FK_Funcionario_Nivel">
+            <End Role="Nivel" EntitySet="Nivel" />
+            <End Role="Funcionario" EntitySet="Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_Profissao" Association="EPISistemaModel.FK_Funcionario_Profissao">
+            <End Role="Profissao" EntitySet="Profissao" />
+            <End Role="Funcionario" EntitySet="Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_RegimeContratacao" Association="EPISistemaModel.FK_Funcionario_RegimeContratacao">
+            <End Role="RegimeContratacao" EntitySet="RegimeContratacao" />
+            <End Role="Funcionario" EntitySet="Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Funcionario" Association="EPISistemaModel.FK_Usuario_Funcionario">
+            <End Role="Funcionario" EntitySet="Funcionario" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemPedido_LocalAplicacao" Association="EPISistemaModel.FK_ItemPedido_LocalAplicacao">
+            <End Role="LocalAplicacao" EntitySet="LocalAplicacao" />
+            <End Role="ItemPedido" EntitySet="ItemPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubMenu_Menu" Association="EPISistemaModel.FK_SubMenu_Menu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="SubMenu" EntitySet="SubMenu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Perfil" Association="EPISistemaModel.FK_Usuario_Perfil">
+            <End Role="Perfil" EntitySet="Perfil" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemPedido_Praga" Association="EPISistemaModel.FK_ItemPedido_Praga">
+            <End Role="Praga" EntitySet="Praga" />
+            <End Role="ItemPedido" EntitySet="ItemPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Praga_TipoPraga" Association="EPISistemaModel.FK_Praga_TipoPraga">
+            <End Role="TipoPraga" EntitySet="TipoPraga" />
+            <End Role="Praga" EntitySet="Praga" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemPedido_TipoServico" Association="EPISistemaModel.FK_ItemPedido_TipoServico">
+            <End Role="TipoServico" EntitySet="TipoServico" />
+            <End Role="ItemPedido" EntitySet="ItemPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agendamento_Disponibilidade" Association="EPISistemaModel.FK_Agendamento_Disponibilidade">
+            <End Role="Disponibilidade" EntitySet="Disponibilidade" />
+            <End Role="Agendamento" EntitySet="Agendamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agendamento_Periodo" Association="EPISistemaModel.FK_Agendamento_Periodo">
+            <End Role="Periodo" EntitySet="Periodo" />
+            <End Role="Agendamento" EntitySet="Agendamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agendamento_StatusAgendamento" Association="EPISistemaModel.FK_Agendamento_StatusAgendamento">
+            <End Role="StatusAgendamento" EntitySet="StatusAgendamento" />
+            <End Role="Agendamento" EntitySet="Agendamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orcamento_Agendamento" Association="EPISistemaModel.FK_Orcamento_Agendamento">
+            <End Role="Agendamento" EntitySet="Agendamento" />
+            <End Role="Orcamento" EntitySet="Orcamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orcamento_FormaPagamento" Association="EPISistemaModel.FK_Orcamento_FormaPagamento">
+            <End Role="FormaPagamento" EntitySet="FormaPagamento" />
+            <End Role="Orcamento" EntitySet="Orcamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemPedido_Pedido" Association="EPISistemaModel.FK_ItemPedido_Pedido">
+            <End Role="Pedido" EntitySet="Pedido" />
+            <End Role="ItemPedido" EntitySet="ItemPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orcamento_Pedido" Association="EPISistemaModel.FK_Orcamento_Pedido">
+            <End Role="Pedido" EntitySet="Pedido" />
+            <End Role="Orcamento" EntitySet="Orcamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orcamento_Produto" Association="EPISistemaModel.FK_Orcamento_Produto">
+            <End Role="Produto" EntitySet="Produto" />
+            <End Role="Orcamento" EntitySet="Orcamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedido_StatusPedido" Association="EPISistemaModel.FK_Pedido_StatusPedido">
+            <End Role="StatusPedido" EntitySet="StatusPedido" />
+            <End Role="Pedido" EntitySet="Pedido" />
+          </AssociationSet>
+          <AssociationSet Name="PerfilMenu" Association="EPISistemaModel.PerfilMenu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="Perfil" EntitySet="Perfil" />
+          </AssociationSet>
+          <AssociationSet Name="PerfilUsuario" Association="EPISistemaModel.PerfilUsuario">
+            <End Role="Perfil" EntitySet="Perfil" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Acao">
+          <Key>
+            <PropertyRef Name="IdAcao" />
+          </Key>
+          <Property Name="IdAcao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Acao1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Aplicacao">
+          <Key>
+            <PropertyRef Name="IdAplicacao" />
+          </Key>
+          <Property Name="IdAplicacao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Aplicacao1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="AreaAtividade">
+          <Key>
+            <PropertyRef Name="IdAreaAtividade" />
+          </Key>
+          <Property Name="IdAreaAtividade" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaAtividade1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Beneficio">
+          <Key>
+            <PropertyRef Name="IdBeneficio" />
+          </Key>
+          <Property Name="IdBeneficio" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdFuncionario" Type="Int32" Nullable="false" />
+          <Property Name="ValorSalario" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ValorEncargos" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ValorBeneficios" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Funcionario" Relationship="EPISistemaModel.FK_Funcionario_Beneficio" FromRole="Beneficio" ToRole="Funcionario" />
+        </EntityType>
+        <EntityType Name="Cidade">
+          <Key>
+            <PropertyRef Name="IdCidade" />
+          </Key>
+          <Property Name="IdCidade" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEstado" Type="Int32" Nullable="false" />
+          <Property Name="Cidade1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Estado" Relationship="EPISistemaModel.FK_Cidade_Estado" FromRole="Cidade" ToRole="Estado" />
+          <NavigationProperty Name="Cliente" Relationship="EPISistemaModel.FK_Cliente_Cidade" FromRole="Cidade" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="IdCliente" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdTipoCliente" Type="Int32" />
+          <Property Name="IdProfisao" Type="Int32" />
+          <Property Name="Nome" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="CPF" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
+          <Property Name="RG" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="DataExpedicao" Type="DateTime" Precision="3" />
+          <Property Name="OrgaoEmissor" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="CNH" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="DataNascimento" Type="DateTime" Precision="3" />
+          <Property Name="Sexo" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="EMail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="NomeFantasia" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="RazaoSocial" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="CNPJ" Type="String" MaxLength="18" Unicode="false" FixedLength="false" />
+          <Property Name="IdTipoSegmento" Type="Int32" />
+          <Property Name="AreaAtividade" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="NomeSocios" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="DataFundacao" Type="DateTime" Precision="3" />
+          <Property Name="NumFuncionarios" Type="Int32" />
+          <Property Name="InscEsdual" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="InsMunicipal" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="Site" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Matriz" Type="Boolean" />
+          <Property Name="GrupoEmpresarial" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IdCidade" Type="Int32" />
+          <Property Name="IdTipoEndereco" Type="Int32" />
+          <Property Name="Endereco" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Numero" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Complemento" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Bairro" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CEP" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="PontoReferencia" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FoneContato" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="CelContato" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="FoneComlContato" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="DataCadastro" Type="DateTime" Precision="3" />
+          <Property Name="DataAtualizacao" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="Cidade" Relationship="EPISistemaModel.FK_Cliente_Cidade" FromRole="Cliente" ToRole="Cidade" />
+          <NavigationProperty Name="Profissao" Relationship="EPISistemaModel.FK_Cliente_Profissao" FromRole="Cliente" ToRole="Profissao" />
+          <NavigationProperty Name="TipoCliente" Relationship="EPISistemaModel.FK_Cliente_TipoCliente" FromRole="Cliente" ToRole="TipoCliente" />
+          <NavigationProperty Name="TipoEndereco" Relationship="EPISistemaModel.FK_Cliente_TipoEndereco" FromRole="Cliente" ToRole="TipoEndereco" />
+          <NavigationProperty Name="TipoSegmento" Relationship="EPISistemaModel.FK_Cliente_TipoSegmento" FromRole="Cliente" ToRole="TipoSegmento" />
+          <NavigationProperty Name="Pedido" Relationship="EPISistemaModel.FK_Pedido_Cliente" FromRole="Cliente" ToRole="Pedido" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="IdDepartamento" />
+          </Key>
+          <Property Name="IdDepartamento" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Departamento1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Funcionario" Relationship="EPISistemaModel.FK_Funcionario_Departamento" FromRole="Departamento" ToRole="Funcionario" />
+        </EntityType>
+        <EntityType Name="Diluente">
+          <Key>
+            <PropertyRef Name="IdDiluente" />
+          </Key>
+          <Property Name="IdDiluente" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Diluente1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Descricao" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="IdEstado" />
+          </Key>
+          <Property Name="IdEstado" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPais" Type="Int32" Nullable="false" />
+          <Property Name="Sigla" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="Estado1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cidade" Relationship="EPISistemaModel.FK_Cidade_Estado" FromRole="Estado" ToRole="Cidade" />
+          <NavigationProperty Name="Pais" Relationship="EPISistemaModel.FK_Estado_Pais" FromRole="Estado" ToRole="Pais" />
+        </EntityType>
+        <EntityType Name="Funcionario">
+          <Key>
+            <PropertyRef Name="IdFuncionario" />
+          </Key>
+          <Property Name="IdFuncionario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DataNascimento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="CPF" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="RG" Type="String" Nullable="false" MaxLength="12" Unicode="true" FixedLength="true" />
+          <Property Name="OrgEmissRG" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="DataEmissRG" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CNH" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="IdDepartamento" Type="Int32" Nullable="false" />
+          <Property Name="IdProfissao" Type="Int32" Nullable="false" />
+          <Property Name="IdNivel" Type="Int32" Nullable="false" />
+          <Property Name="IdRegimeContratacao" Type="Int32" Nullable="false" />
+          <Property Name="DataAdmissao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IdBeneficio" Type="Int32" />
+          <Property Name="DataInclusao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="Beneficio" Relationship="EPISistemaModel.FK_Funcionario_Beneficio" FromRole="Funcionario" ToRole="Beneficio" />
+          <NavigationProperty Name="Departamento" Relationship="EPISistemaModel.FK_Funcionario_Departamento" FromRole="Funcionario" ToRole="Departamento" />
+          <NavigationProperty Name="Nivel" Relationship="EPISistemaModel.FK_Funcionario_Nivel" FromRole="Funcionario" ToRole="Nivel" />
+          <NavigationProperty Name="Profissao" Relationship="EPISistemaModel.FK_Funcionario_Profissao" FromRole="Funcionario" ToRole="Profissao" />
+          <NavigationProperty Name="RegimeContratacao" Relationship="EPISistemaModel.FK_Funcionario_RegimeContratacao" FromRole="Funcionario" ToRole="RegimeContratacao" />
+          <NavigationProperty Name="Usuario" Relationship="EPISistemaModel.FK_Usuario_Funcionario" FromRole="Funcionario" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="LocalAplicacao">
+          <Key>
+            <PropertyRef Name="IdLocalAplicacao" />
+          </Key>
+          <Property Name="IdLocalAplicacao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="LocalAplicacao1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ItemPedido" Relationship="EPISistemaModel.FK_ItemPedido_LocalAplicacao" FromRole="LocalAplicacao" ToRole="ItemPedido" />
+        </EntityType>
+        <EntityType Name="LogErro">
+          <Key>
+            <PropertyRef Name="IdLog" />
+          </Key>
+          <Property Name="IdLog" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Erro" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Pagina" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Linha" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DataHora" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="IdMenu" />
+          </Key>
+          <Property Name="IdMenu" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Menu1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Link" Type="String" Nullable="false" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="Target" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SubMenu" Relationship="EPISistemaModel.FK_SubMenu_Menu" FromRole="Menu" ToRole="SubMenu" />
+          <NavigationProperty Name="Perfil" Relationship="EPISistemaModel.PerfilMenu" FromRole="Menu" ToRole="Perfil" />
+        </EntityType>
+        <EntityType Name="Nivel">
+          <Key>
+            <PropertyRef Name="IdNivel" />
+          </Key>
+          <Property Name="IdNivel" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nivel1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Funcionario" Relationship="EPISistemaModel.FK_Funcionario_Nivel" FromRole="Nivel" ToRole="Funcionario" />
+        </EntityType>
+        <EntityType Name="Pais">
+          <Key>
+            <PropertyRef Name="IdPais" />
+          </Key>
+          <Property Name="IdPais" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Sigla" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="Pais1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Estado" Relationship="EPISistemaModel.FK_Estado_Pais" FromRole="Pais" ToRole="Estado" />
+        </EntityType>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="IdPerfil" />
+          </Key>
+          <Property Name="IdPerfil" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Perfil1" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Descricao" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Usuario" Relationship="EPISistemaModel.FK_Usuario_Perfil" FromRole="Perfil" ToRole="Usuario" />
+          <NavigationProperty Name="Menu" Relationship="EPISistemaModel.PerfilMenu" FromRole="Perfil" ToRole="Menu" />
+          <NavigationProperty Name="Usuario1" Relationship="EPISistemaModel.PerfilUsuario" FromRole="Perfil" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Praga">
+          <Key>
+            <PropertyRef Name="IdPraga" />
+          </Key>
+          <Property Name="IdPraga" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdTipoPraga" Type="Int32" Nullable="false" />
+          <Property Name="NomePraga" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ImgPraga" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ItemPedido" Relationship="EPISistemaModel.FK_ItemPedido_Praga" FromRole="Praga" ToRole="ItemPedido" />
+          <NavigationProperty Name="TipoPraga" Relationship="EPISistemaModel.FK_Praga_TipoPraga" FromRole="Praga" ToRole="TipoPraga" />
+        </EntityType>
+        <EntityType Name="Profissao">
+          <Key>
+            <PropertyRef Name="IdProfissao" />
+          </Key>
+          <Property Name="IdProfissao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CodProfissao" Type="Int32" Nullable="false" />
+          <Property Name="Profissao1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Cliente" Relationship="EPISistemaModel.FK_Cliente_Profissao" FromRole="Profissao" ToRole="Cliente" />
+          <NavigationProperty Name="Funcionario" Relationship="EPISistemaModel.FK_Funcionario_Profissao" FromRole="Profissao" ToRole="Funcionario" />
+        </EntityType>
+        <EntityType Name="RegimeContratacao">
+          <Key>
+            <PropertyRef Name="IdRegimeContratacao" />
+          </Key>
+          <Property Name="IdRegimeContratacao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RegimeContratacao1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Funcionario" Relationship="EPISistemaModel.FK_Funcionario_RegimeContratacao" FromRole="RegimeContratacao" ToRole="Funcionario" />
+        </EntityType>
+        <EntityType Name="Servico">
+          <Key>
+            <PropertyRef Name="IdServico" />
+          </Key>
+          <Property Name="IdServico" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="IdPedido" Type="Int32" Nullable="false" />
+          <Property Name="DataServico" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Periodo" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="IdTecnico" Type="Int32" Nullable="false" />
+          <Property Name="HrInicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HrFim" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IdLocal" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SubMenu">
+          <Key>
+            <PropertyRef Name="IdSubMenu" />
+          </Key>
+          <Property Name="IdSubMenu" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdMenu" Type="Int32" Nullable="false" />
+          <Property Name="SubMenu1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Link" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="Target" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Menu" Relationship="EPISistemaModel.FK_SubMenu_Menu" FromRole="SubMenu" ToRole="Menu" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TipoPraga">
+          <Key>
+            <PropertyRef Name="IdTipoPraga" />
+          </Key>
+          <Property Name="IdTipoPraga" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoPraga1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Praga" Relationship="EPISistemaModel.FK_Praga_TipoPraga" FromRole="TipoPraga" ToRole="Praga" />
+        </EntityType>
+        <EntityType Name="TipoServico">
+          <Key>
+            <PropertyRef Name="IdTipoServico" />
+          </Key>
+          <Property Name="IdTipoServico" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoServico1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ItemPedido" Relationship="EPISistemaModel.FK_ItemPedido_TipoServico" FromRole="TipoServico" ToRole="ItemPedido" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPerfil" Type="Int32" Nullable="false" />
+          <Property Name="IdFuncionario" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Senha" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Bloqueado" Type="Boolean" Nullable="false" />
+          <Property Name="DataInclusao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataAlteracao" Type="DateTime" Precision="3" />
+          <Property Name="DataUltimoAcesso" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Funcionario" Relationship="EPISistemaModel.FK_Usuario_Funcionario" FromRole="Usuario" ToRole="Funcionario" />
+          <NavigationProperty Name="Perfil" Relationship="EPISistemaModel.FK_Usuario_Perfil" FromRole="Usuario" ToRole="Perfil" />
+          <NavigationProperty Name="Perfil1" Relationship="EPISistemaModel.PerfilUsuario" FromRole="Usuario" ToRole="Perfil" />
+        </EntityType>
+        <EntityType Name="Vetor">
+          <Key>
+            <PropertyRef Name="IdVetor" />
+          </Key>
+          <Property Name="IdVetor" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Vetor1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Descricao" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Agendamento">
+          <Key>
+            <PropertyRef Name="IdAgendamento" />
+          </Key>
+          <Property Name="IdAgendamento" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdOrcamento" Type="Int32" Nullable="false" />
+          <Property Name="DataPrevisao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IdPeriodo" Type="Int32" Nullable="false" />
+          <Property Name="HoraAgendada" Type="String" Nullable="false" MaxLength="8" Unicode="true" FixedLength="false" />
+          <Property Name="HoraIni" Type="String" Nullable="false" MaxLength="8" Unicode="true" FixedLength="false" />
+          <Property Name="HoraFim" Type="String" Nullable="false" MaxLength="8" Unicode="true" FixedLength="false" />
+          <Property Name="IdTecnico" Type="Int32" Nullable="false" />
+          <Property Name="IdLocal" Type="Int32" Nullable="false" />
+          <Property Name="IdDisponibilidade" Type="Int32" Nullable="false" />
+          <Property Name="IdStatus" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Disponibilidade" Relationship="EPISistemaModel.FK_Agendamento_Disponibilidade" FromRole="Agendamento" ToRole="Disponibilidade" />
+          <NavigationProperty Name="Periodo" Relationship="EPISistemaModel.FK_Agendamento_Periodo" FromRole="Agendamento" ToRole="Periodo" />
+          <NavigationProperty Name="StatusAgendamento" Relationship="EPISistemaModel.FK_Agendamento_StatusAgendamento" FromRole="Agendamento" ToRole="StatusAgendamento" />
+          <NavigationProperty Name="Orcamento" Relationship="EPISistemaModel.FK_Orcamento_Agendamento" FromRole="Agendamento" ToRole="Orcamento" />
+        </EntityType>
+        <EntityType Name="Disponibilidade">
+          <Key>
+            <PropertyRef Name="IdDisponibilidade" />
+          </Key>
+          <Property Name="IdDisponibilidade" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Disponibilidade1" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Agendamento" Relationship="EPISistemaModel.FK_Agendamento_Disponibilidade" FromRole="Disponibilidade" ToRole="Agendamento" />
+        </EntityType>
+        <EntityType Name="FormaPagamento">
+          <Key>
+            <PropertyRef Name="IdFormaPagamento" />
+          </Key>
+          <Property Name="IdFormaPagamento" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FormaPagamento1" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Orcamento" Relationship="EPISistemaModel.FK_Orcamento_FormaPagamento" FromRole="FormaPagamento" ToRole="Orcamento" />
+        </EntityType>
+        <EntityType Name="ItemPedido">
+          <Key>
+            <PropertyRef Name="IdItemPedido" />
+          </Key>
+          <Property Name="IdItemPedido" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPedido" Type="Int32" Nullable="false" />
+          <Property Name="IdPraga" Type="Int32" Nullable="false" />
+          <Property Name="IdEnderecoAplicacao" Type="Int32" />
+          <Property Name="IdLocalAplicacao" Type="Int32" Nullable="false" />
+          <Property Name="IdTipoServico" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LocalAplicacao" Relationship="EPISistemaModel.FK_ItemPedido_LocalAplicacao" FromRole="ItemPedido" ToRole="LocalAplicacao" />
+          <NavigationProperty Name="Praga" Relationship="EPISistemaModel.FK_ItemPedido_Praga" FromRole="ItemPedido" ToRole="Praga" />
+          <NavigationProperty Name="TipoServico" Relationship="EPISistemaModel.FK_ItemPedido_TipoServico" FromRole="ItemPedido" ToRole="TipoServico" />
+          <NavigationProperty Name="Pedido" Relationship="EPISistemaModel.FK_ItemPedido_Pedido" FromRole="ItemPedido" ToRole="Pedido" />
+        </EntityType>
+        <EntityType Name="Orcamento">
+          <Key>
+            <PropertyRef Name="IdOrcamento" />
+          </Key>
+          <Property Name="IdOrcamento" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPedido" Type="Int32" Nullable="false" />
+          <Property Name="IdAgendamento" Type="Int32" Nullable="false" />
+          <Property Name="ValorOrcamento" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="IdFormaPagamento" Type="Int32" Nullable="false" />
+          <Property Name="IdProduto" Type="Int32" Nullable="false" />
+          <Property Name="DataOrcamento" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Agendamento" Relationship="EPISistemaModel.FK_Orcamento_Agendamento" FromRole="Orcamento" ToRole="Agendamento" />
+          <NavigationProperty Name="FormaPagamento" Relationship="EPISistemaModel.FK_Orcamento_FormaPagamento" FromRole="Orcamento" ToRole="FormaPagamento" />
+          <NavigationProperty Name="Pedido" Relationship="EPISistemaModel.FK_Orcamento_Pedido" FromRole="Orcamento" ToRole="Pedido" />
+          <NavigationProperty Name="Produto" Relationship="EPISistemaModel.FK_Orcamento_Produto" FromRole="Orcamento" ToRole="Produto" />
+        </EntityType>
+        <EntityType Name="Pedido">
+          <Key>
+            <PropertyRef Name="IdPedido" />
+          </Key>
+          <Property Name="IdPedido" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCliente" Type="Int32" />
+          <Property Name="DtPedido" Type="DateTime" Precision="3" />
+          <Property Name="IdStatusPedido" Type="Int32" />
+          <NavigationProperty Name="Cliente" Relationship="EPISistemaModel.FK_Pedido_Cliente" FromRole="Pedido" ToRole="Cliente" />
+          <NavigationProperty Name="ItemPedido" Relationship="EPISistemaModel.FK_ItemPedido_Pedido" FromRole="Pedido" ToRole="ItemPedido" />
+          <NavigationProperty Name="Orcamento" Relationship="EPISistemaModel.FK_Orcamento_Pedido" FromRole="Pedido" ToRole="Orcamento" />
+          <NavigationProperty Name="StatusPedido" Relationship="EPISistemaModel.FK_Pedido_StatusPedido" FromRole="Pedido" ToRole="StatusPedido" />
+        </EntityType>
+        <EntityType Name="Periodo">
+          <Key>
+            <PropertyRef Name="IdPeriodo" />
+          </Key>
+          <Property Name="IdPeriodo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Periodo1" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Agendamento" Relationship="EPISistemaModel.FK_Agendamento_Periodo" FromRole="Periodo" ToRole="Agendamento" />
+        </EntityType>
+        <EntityType Name="Produto">
+          <Key>
+            <PropertyRef Name="IdProduto" />
+          </Key>
+          <Property Name="IdProduto" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeProduto" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="Validade" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Orcamento" Relationship="EPISistemaModel.FK_Orcamento_Produto" FromRole="Produto" ToRole="Orcamento" />
+        </EntityType>
+        <EntityType Name="StatusAgendamento">
+          <Key>
+            <PropertyRef Name="IdStatusAgendamento" />
+          </Key>
+          <Property Name="IdStatusAgendamento" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Agendamento" Relationship="EPISistemaModel.FK_Agendamento_StatusAgendamento" FromRole="StatusAgendamento" ToRole="Agendamento" />
+        </EntityType>
+        <EntityType Name="StatusPedido">
+          <Key>
+            <PropertyRef Name="IdStatusPedido" />
+          </Key>
+          <Property Name="IdStatusPedido" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusPedido1" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Pedido" Relationship="EPISistemaModel.FK_Pedido_StatusPedido" FromRole="StatusPedido" ToRole="Pedido" />
+        </EntityType>
+        <EntityType Name="TipoCliente">
+          <Key>
+            <PropertyRef Name="IdTipoCliente" />
+          </Key>
+          <Property Name="IdTipoCliente" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoCliente1" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cliente" Relationship="EPISistemaModel.FK_Cliente_TipoCliente" FromRole="TipoCliente" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="TipoEndereco">
+          <Key>
+            <PropertyRef Name="IdTipoEndereco" />
+          </Key>
+          <Property Name="IdTipoEndereco" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoEndereco1" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cliente" Relationship="EPISistemaModel.FK_Cliente_TipoEndereco" FromRole="TipoEndereco" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="TipoSegmento">
+          <Key>
+            <PropertyRef Name="IdTipoSegmento" />
+          </Key>
+          <Property Name="IdTipoSegmento" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoSegmento1" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Cliente" Relationship="EPISistemaModel.FK_Cliente_TipoSegmento" FromRole="TipoSegmento" ToRole="Cliente" />
+        </EntityType>
+        <Association Name="FK_Funcionario_Beneficio">
+          <End Role="Beneficio" Type="EPISistemaModel.Beneficio" Multiplicity="0..1" />
+          <End Role="Funcionario" Type="EPISistemaModel.Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Beneficio">
+              <PropertyRef Name="IdBeneficio" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IdBeneficio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cidade_Estado">
+          <End Role="Estado" Type="EPISistemaModel.Estado" Multiplicity="1" />
+          <End Role="Cidade" Type="EPISistemaModel.Cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="IdEstado" />
+            </Principal>
+            <Dependent Role="Cidade">
+              <PropertyRef Name="IdEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Cidade">
+          <End Role="Cidade" Type="EPISistemaModel.Cidade" Multiplicity="0..1" />
+          <End Role="Cliente" Type="EPISistemaModel.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cidade">
+              <PropertyRef Name="IdCidade" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdCidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Profissao">
+          <End Role="Profissao" Type="EPISistemaModel.Profissao" Multiplicity="0..1" />
+          <End Role="Cliente" Type="EPISistemaModel.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profissao">
+              <PropertyRef Name="IdProfissao" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdProfisao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_TipoCliente">
+          <End Role="TipoCliente" Type="EPISistemaModel.TipoCliente" Multiplicity="0..1" />
+          <End Role="Cliente" Type="EPISistemaModel.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoCliente">
+              <PropertyRef Name="IdTipoCliente" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdTipoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_TipoEndereco">
+          <End Role="TipoEndereco" Type="EPISistemaModel.TipoEndereco" Multiplicity="0..1" />
+          <End Role="Cliente" Type="EPISistemaModel.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEndereco">
+              <PropertyRef Name="IdTipoEndereco" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdTipoEndereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_TipoSegmento">
+          <End Role="TipoSegmento" Type="EPISistemaModel.TipoSegmento" Multiplicity="0..1" />
+          <End Role="Cliente" Type="EPISistemaModel.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSegmento">
+              <PropertyRef Name="IdTipoSegmento" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdTipoSegmento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedido_Cliente">
+          <End Role="Cliente" Type="EPISistemaModel.Cliente" Multiplicity="0..1" />
+          <End Role="Pedido" Type="EPISistemaModel.Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funcionario_Departamento">
+          <End Role="Departamento" Type="EPISistemaModel.Departamento" Multiplicity="1" />
+          <End Role="Funcionario" Type="EPISistemaModel.Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="IdDepartamento" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IdDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estado_Pais">
+          <End Role="Pais" Type="EPISistemaModel.Pais" Multiplicity="1" />
+          <End Role="Estado" Type="EPISistemaModel.Estado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="IdPais" />
+            </Principal>
+            <Dependent Role="Estado">
+              <PropertyRef Name="IdPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funcionario_Nivel">
+          <End Role="Nivel" Type="EPISistemaModel.Nivel" Multiplicity="1" />
+          <End Role="Funcionario" Type="EPISistemaModel.Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nivel">
+              <PropertyRef Name="IdNivel" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IdNivel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funcionario_Profissao">
+          <End Role="Profissao" Type="EPISistemaModel.Profissao" Multiplicity="1" />
+          <End Role="Funcionario" Type="EPISistemaModel.Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profissao">
+              <PropertyRef Name="IdProfissao" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IdProfissao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funcionario_RegimeContratacao">
+          <End Role="RegimeContratacao" Type="EPISistemaModel.RegimeContratacao" Multiplicity="1" />
+          <End Role="Funcionario" Type="EPISistemaModel.Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegimeContratacao">
+              <PropertyRef Name="IdRegimeContratacao" />
+            </Principal>
+            <Dependent Role="Funcionario">
+              <PropertyRef Name="IdRegimeContratacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Funcionario">
+          <End Role="Funcionario" Type="EPISistemaModel.Funcionario" Multiplicity="1" />
+          <End Role="Usuario" Type="EPISistemaModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionario">
+              <PropertyRef Name="IdFuncionario" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IdFuncionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemPedido_LocalAplicacao">
+          <End Role="LocalAplicacao" Type="EPISistemaModel.LocalAplicacao" Multiplicity="1" />
+          <End Role="ItemPedido" Type="EPISistemaModel.ItemPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocalAplicacao">
+              <PropertyRef Name="IdLocalAplicacao" />
+            </Principal>
+            <Dependent Role="ItemPedido">
+              <PropertyRef Name="IdLocalAplicacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubMenu_Menu">
+          <End Role="Menu" Type="EPISistemaModel.Menu" Multiplicity="1" />
+          <End Role="SubMenu" Type="EPISistemaModel.SubMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="IdMenu" />
+            </Principal>
+            <Dependent Role="SubMenu">
+              <PropertyRef Name="IdMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Perfil">
+          <End Role="Perfil" Type="EPISistemaModel.Perfil" Multiplicity="1" />
+          <End Role="Usuario" Type="EPISistemaModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfil">
+              <PropertyRef Name="IdPerfil" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IdPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemPedido_Praga">
+          <End Role="Praga" Type="EPISistemaModel.Praga" Multiplicity="1" />
+          <End Role="ItemPedido" Type="EPISistemaModel.ItemPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Praga">
+              <PropertyRef Name="IdPraga" />
+            </Principal>
+            <Dependent Role="ItemPedido">
+              <PropertyRef Name="IdPraga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Praga_TipoPraga">
+          <End Role="TipoPraga" Type="EPISistemaModel.TipoPraga" Multiplicity="1" />
+          <End Role="Praga" Type="EPISistemaModel.Praga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoPraga">
+              <PropertyRef Name="IdTipoPraga" />
+            </Principal>
+            <Dependent Role="Praga">
+              <PropertyRef Name="IdTipoPraga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemPedido_TipoServico">
+          <End Role="TipoServico" Type="EPISistemaModel.TipoServico" Multiplicity="1" />
+          <End Role="ItemPedido" Type="EPISistemaModel.ItemPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoServico">
+              <PropertyRef Name="IdTipoServico" />
+            </Principal>
+            <Dependent Role="ItemPedido">
+              <PropertyRef Name="IdTipoServico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agendamento_Disponibilidade">
+          <End Role="Disponibilidade" Type="EPISistemaModel.Disponibilidade" Multiplicity="1" />
+          <End Role="Agendamento" Type="EPISistemaModel.Agendamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Disponibilidade">
+              <PropertyRef Name="IdDisponibilidade" />
+            </Principal>
+            <Dependent Role="Agendamento">
+              <PropertyRef Name="IdDisponibilidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agendamento_Periodo">
+          <End Role="Periodo" Type="EPISistemaModel.Periodo" Multiplicity="1" />
+          <End Role="Agendamento" Type="EPISistemaModel.Agendamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periodo">
+              <PropertyRef Name="IdPeriodo" />
+            </Principal>
+            <Dependent Role="Agendamento">
+              <PropertyRef Name="IdPeriodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agendamento_StatusAgendamento">
+          <End Role="StatusAgendamento" Type="EPISistemaModel.StatusAgendamento" Multiplicity="1" />
+          <End Role="Agendamento" Type="EPISistemaModel.Agendamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusAgendamento">
+              <PropertyRef Name="IdStatusAgendamento" />
+            </Principal>
+            <Dependent Role="Agendamento">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orcamento_Agendamento">
+          <End Role="Agendamento" Type="EPISistemaModel.Agendamento" Multiplicity="1" />
+          <End Role="Orcamento" Type="EPISistemaModel.Orcamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agendamento">
+              <PropertyRef Name="IdAgendamento" />
+            </Principal>
+            <Dependent Role="Orcamento">
+              <PropertyRef Name="IdAgendamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orcamento_FormaPagamento">
+          <End Role="FormaPagamento" Type="EPISistemaModel.FormaPagamento" Multiplicity="1" />
+          <End Role="Orcamento" Type="EPISistemaModel.Orcamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormaPagamento">
+              <PropertyRef Name="IdFormaPagamento" />
+            </Principal>
+            <Dependent Role="Orcamento">
+              <PropertyRef Name="IdFormaPagamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemPedido_Pedido">
+          <End Role="Pedido" Type="EPISistemaModel.Pedido" Multiplicity="1" />
+          <End Role="ItemPedido" Type="EPISistemaModel.ItemPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedido">
+              <PropertyRef Name="IdPedido" />
+            </Principal>
+            <Dependent Role="ItemPedido">
+              <PropertyRef Name="IdPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orcamento_Pedido">
+          <End Role="Pedido" Type="EPISistemaModel.Pedido" Multiplicity="1" />
+          <End Role="Orcamento" Type="EPISistemaModel.Orcamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedido">
+              <PropertyRef Name="IdPedido" />
+            </Principal>
+            <Dependent Role="Orcamento">
+              <PropertyRef Name="IdPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orcamento_Produto">
+          <End Role="Produto" Type="EPISistemaModel.Produto" Multiplicity="1" />
+          <End Role="Orcamento" Type="EPISistemaModel.Orcamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produto">
+              <PropertyRef Name="IdProduto" />
+            </Principal>
+            <Dependent Role="Orcamento">
+              <PropertyRef Name="IdProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedido_StatusPedido">
+          <End Role="StatusPedido" Type="EPISistemaModel.StatusPedido" Multiplicity="0..1" />
+          <End Role="Pedido" Type="EPISistemaModel.Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusPedido">
+              <PropertyRef Name="IdStatusPedido" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="IdStatusPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PerfilMenu">
+          <End Role="Menu" Type="EPISistemaModel.Menu" Multiplicity="*" />
+          <End Role="Perfil" Type="EPISistemaModel.Perfil" Multiplicity="*" />
+        </Association>
+        <Association Name="PerfilUsuario">
+          <End Role="Perfil" Type="EPISistemaModel.Perfil" Multiplicity="*" />
+          <End Role="Usuario" Type="EPISistemaModel.Usuario" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EPISistemaModelStoreContainer" CdmEntityContainer="EPISistemaEntities">
+          <EntitySetMapping Name="Acao">
+            <EntityTypeMapping TypeName="EPISistemaModel.Acao">
+              <MappingFragment StoreEntitySet="Acao">
+                <ScalarProperty Name="IdAcao" ColumnName="IdAcao" />
+                <ScalarProperty Name="Acao1" ColumnName="Acao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Aplicacao">
+            <EntityTypeMapping TypeName="EPISistemaModel.Aplicacao">
+              <MappingFragment StoreEntitySet="Aplicacao">
+                <ScalarProperty Name="IdAplicacao" ColumnName="IdAplicacao" />
+                <ScalarProperty Name="Aplicacao1" ColumnName="Aplicacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AreaAtividade">
+            <EntityTypeMapping TypeName="EPISistemaModel.AreaAtividade">
+              <MappingFragment StoreEntitySet="AreaAtividade">
+                <ScalarProperty Name="IdAreaAtividade" ColumnName="IdAreaAtividade" />
+                <ScalarProperty Name="AreaAtividade1" ColumnName="AreaAtividade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Beneficio">
+            <EntityTypeMapping TypeName="EPISistemaModel.Beneficio">
+              <MappingFragment StoreEntitySet="Beneficio">
+                <ScalarProperty Name="IdBeneficio" ColumnName="IdBeneficio" />
+                <ScalarProperty Name="IdFuncionario" ColumnName="IdFuncionario" />
+                <ScalarProperty Name="ValorSalario" ColumnName="ValorSalario" />
+                <ScalarProperty Name="ValorEncargos" ColumnName="ValorEncargos" />
+                <ScalarProperty Name="ValorBeneficios" ColumnName="ValorBeneficios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cidade">
+            <EntityTypeMapping TypeName="EPISistemaModel.Cidade">
+              <MappingFragment StoreEntitySet="Cidade">
+                <ScalarProperty Name="IdCidade" ColumnName="IdCidade" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="Cidade1" ColumnName="Cidade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="EPISistemaModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="IdTipoCliente" ColumnName="IdTipoCliente" />
+                <ScalarProperty Name="IdProfisao" ColumnName="IdProfisao" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="RG" ColumnName="RG" />
+                <ScalarProperty Name="DataExpedicao" ColumnName="DataExpedicao" />
+                <ScalarProperty Name="OrgaoEmissor" ColumnName="OrgaoEmissor" />
+                <ScalarProperty Name="CNH" ColumnName="CNH" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="NomeFantasia" ColumnName="NomeFantasia" />
+                <ScalarProperty Name="RazaoSocial" ColumnName="RazaoSocial" />
+                <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+                <ScalarProperty Name="IdTipoSegmento" ColumnName="IdTipoSegmento" />
+                <ScalarProperty Name="AreaAtividade" ColumnName="AreaAtividade" />
+                <ScalarProperty Name="NomeSocios" ColumnName="NomeSocios" />
+                <ScalarProperty Name="DataFundacao" ColumnName="DataFundacao" />
+                <ScalarProperty Name="NumFuncionarios" ColumnName="NumFuncionarios" />
+                <ScalarProperty Name="InscEsdual" ColumnName="InscEsdual" />
+                <ScalarProperty Name="InsMunicipal" ColumnName="InsMunicipal" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="Matriz" ColumnName="Matriz" />
+                <ScalarProperty Name="GrupoEmpresarial" ColumnName="GrupoEmpresarial" />
+                <ScalarProperty Name="IdCidade" ColumnName="IdCidade" />
+                <ScalarProperty Name="IdTipoEndereco" ColumnName="IdTipoEndereco" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Complemento" ColumnName="Complemento" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="PontoReferencia" ColumnName="PontoReferencia" />
+                <ScalarProperty Name="FoneContato" ColumnName="FoneContato" />
+                <ScalarProperty Name="CelContato" ColumnName="CelContato" />
+                <ScalarProperty Name="FoneComlContato" ColumnName="FoneComlContato" />
+                <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+                <ScalarProperty Name="DataAtualizacao" ColumnName="DataAtualizacao" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departamento">
+            <EntityTypeMapping TypeName="EPISistemaModel.Departamento">
+              <MappingFragment StoreEntitySet="Departamento">
+                <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+                <ScalarProperty Name="Departamento1" ColumnName="Departamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Diluente">
+            <EntityTypeMapping TypeName="EPISistemaModel.Diluente">
+              <MappingFragment StoreEntitySet="Diluente">
+                <ScalarProperty Name="IdDiluente" ColumnName="IdDiluente" />
+                <ScalarProperty Name="Diluente1" ColumnName="Diluente" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estado">
+            <EntityTypeMapping TypeName="EPISistemaModel.Estado">
+              <MappingFragment StoreEntitySet="Estado">
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="IdPais" ColumnName="IdPais" />
+                <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+                <ScalarProperty Name="Estado1" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Funcionario">
+            <EntityTypeMapping TypeName="EPISistemaModel.Funcionario">
+              <MappingFragment StoreEntitySet="Funcionario">
+                <ScalarProperty Name="IdFuncionario" ColumnName="IdFuncionario" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="RG" ColumnName="RG" />
+                <ScalarProperty Name="OrgEmissRG" ColumnName="OrgEmissRG" />
+                <ScalarProperty Name="DataEmissRG" ColumnName="DataEmissRG" />
+                <ScalarProperty Name="CNH" ColumnName="CNH" />
+                <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+                <ScalarProperty Name="IdProfissao" ColumnName="IdProfissao" />
+                <ScalarProperty Name="IdNivel" ColumnName="IdNivel" />
+                <ScalarProperty Name="IdRegimeContratacao" ColumnName="IdRegimeContratacao" />
+                <ScalarProperty Name="DataAdmissao" ColumnName="DataAdmissao" />
+                <ScalarProperty Name="IdBeneficio" ColumnName="IdBeneficio" />
+                <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocalAplicacao">
+            <EntityTypeMapping TypeName="EPISistemaModel.LocalAplicacao">
+              <MappingFragment StoreEntitySet="LocalAplicacao">
+                <ScalarProperty Name="IdLocalAplicacao" ColumnName="IdLocalAplicacao" />
+                <ScalarProperty Name="LocalAplicacao1" ColumnName="LocalAplicacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogErro">
+            <EntityTypeMapping TypeName="EPISistemaModel.LogErro">
+              <MappingFragment StoreEntitySet="LogErro">
+                <ScalarProperty Name="IdLog" ColumnName="IdLog" />
+                <ScalarProperty Name="Erro" ColumnName="Erro" />
+                <ScalarProperty Name="Pagina" ColumnName="Pagina" />
+                <ScalarProperty Name="Linha" ColumnName="Linha" />
+                <ScalarProperty Name="DataHora" ColumnName="DataHora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menu">
+            <EntityTypeMapping TypeName="EPISistemaModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
+                <ScalarProperty Name="Menu1" ColumnName="Menu" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nivel">
+            <EntityTypeMapping TypeName="EPISistemaModel.Nivel">
+              <MappingFragment StoreEntitySet="Nivel">
+                <ScalarProperty Name="IdNivel" ColumnName="IdNivel" />
+                <ScalarProperty Name="Nivel1" ColumnName="Nivel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pais">
+            <EntityTypeMapping TypeName="EPISistemaModel.Pais">
+              <MappingFragment StoreEntitySet="Pais">
+                <ScalarProperty Name="IdPais" ColumnName="IdPais" />
+                <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+                <ScalarProperty Name="Pais1" ColumnName="Pais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perfil">
+            <EntityTypeMapping TypeName="EPISistemaModel.Perfil">
+              <MappingFragment StoreEntitySet="Perfil">
+                <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+                <ScalarProperty Name="Perfil1" ColumnName="Perfil" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Praga">
+            <EntityTypeMapping TypeName="EPISistemaModel.Praga">
+              <MappingFragment StoreEntitySet="Praga">
+                <ScalarProperty Name="IdPraga" ColumnName="IdPraga" />
+                <ScalarProperty Name="IdTipoPraga" ColumnName="IdTipoPraga" />
+                <ScalarProperty Name="NomePraga" ColumnName="NomePraga" />
+                <ScalarProperty Name="ImgPraga" ColumnName="ImgPraga" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profissao">
+            <EntityTypeMapping TypeName="EPISistemaModel.Profissao">
+              <MappingFragment StoreEntitySet="Profissao">
+                <ScalarProperty Name="IdProfissao" ColumnName="IdProfissao" />
+                <ScalarProperty Name="CodProfissao" ColumnName="CodProfissao" />
+                <ScalarProperty Name="Profissao1" ColumnName="Profissao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegimeContratacao">
+            <EntityTypeMapping TypeName="EPISistemaModel.RegimeContratacao">
+              <MappingFragment StoreEntitySet="RegimeContratacao">
+                <ScalarProperty Name="IdRegimeContratacao" ColumnName="IdRegimeContratacao" />
+                <ScalarProperty Name="RegimeContratacao1" ColumnName="RegimeContratacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Servico">
+            <EntityTypeMapping TypeName="EPISistemaModel.Servico">
+              <MappingFragment StoreEntitySet="Servico">
+                <ScalarProperty Name="IdServico" ColumnName="IdServico" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+                <ScalarProperty Name="DataServico" ColumnName="DataServico" />
+                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+                <ScalarProperty Name="IdTecnico" ColumnName="IdTecnico" />
+                <ScalarProperty Name="HrInicio" ColumnName="HrInicio" />
+                <ScalarProperty Name="HrFim" ColumnName="HrFim" />
+                <ScalarProperty Name="IdLocal" ColumnName="IdLocal" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubMenu">
+            <EntityTypeMapping TypeName="EPISistemaModel.SubMenu">
+              <MappingFragment StoreEntitySet="SubMenu">
+                <ScalarProperty Name="IdSubMenu" ColumnName="IdSubMenu" />
+                <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
+                <ScalarProperty Name="SubMenu1" ColumnName="SubMenu" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="EPISistemaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoPraga">
+            <EntityTypeMapping TypeName="EPISistemaModel.TipoPraga">
+              <MappingFragment StoreEntitySet="TipoPraga">
+                <ScalarProperty Name="IdTipoPraga" ColumnName="IdTipoPraga" />
+                <ScalarProperty Name="TipoPraga1" ColumnName="TipoPraga" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoServico">
+            <EntityTypeMapping TypeName="EPISistemaModel.TipoServico">
+              <MappingFragment StoreEntitySet="TipoServico">
+                <ScalarProperty Name="IdTipoServico" ColumnName="IdTipoServico" />
+                <ScalarProperty Name="TipoServico1" ColumnName="TipoServico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="EPISistemaModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+                <ScalarProperty Name="IdFuncionario" ColumnName="IdFuncionario" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Bloqueado" ColumnName="Bloqueado" />
+                <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+                <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+                <ScalarProperty Name="DataUltimoAcesso" ColumnName="DataUltimoAcesso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vetor">
+            <EntityTypeMapping TypeName="EPISistemaModel.Vetor">
+              <MappingFragment StoreEntitySet="Vetor">
+                <ScalarProperty Name="IdVetor" ColumnName="IdVetor" />
+                <ScalarProperty Name="Vetor1" ColumnName="Vetor" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agendamento">
+            <EntityTypeMapping TypeName="EPISistemaModel.Agendamento">
+              <MappingFragment StoreEntitySet="Agendamento">
+                <ScalarProperty Name="IdAgendamento" ColumnName="IdAgendamento" />
+                <ScalarProperty Name="IdOrcamento" ColumnName="IdOrcamento" />
+                <ScalarProperty Name="DataPrevisao" ColumnName="DataPrevisao" />
+                <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+                <ScalarProperty Name="HoraAgendada" ColumnName="HoraAgendada" />
+                <ScalarProperty Name="HoraIni" ColumnName="HoraIni" />
+                <ScalarProperty Name="HoraFim" ColumnName="HoraFim" />
+                <ScalarProperty Name="IdTecnico" ColumnName="IdTecnico" />
+                <ScalarProperty Name="IdLocal" ColumnName="IdLocal" />
+                <ScalarProperty Name="IdDisponibilidade" ColumnName="IdDisponibilidade" />
+                <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Disponibilidade">
+            <EntityTypeMapping TypeName="EPISistemaModel.Disponibilidade">
+              <MappingFragment StoreEntitySet="Disponibilidade">
+                <ScalarProperty Name="IdDisponibilidade" ColumnName="IdDisponibilidade" />
+                <ScalarProperty Name="Disponibilidade1" ColumnName="Disponibilidade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormaPagamento">
+            <EntityTypeMapping TypeName="EPISistemaModel.FormaPagamento">
+              <MappingFragment StoreEntitySet="FormaPagamento">
+                <ScalarProperty Name="IdFormaPagamento" ColumnName="IdFormaPagamento" />
+                <ScalarProperty Name="FormaPagamento1" ColumnName="FormaPagamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemPedido">
+            <EntityTypeMapping TypeName="EPISistemaModel.ItemPedido">
+              <MappingFragment StoreEntitySet="ItemPedido">
+                <ScalarProperty Name="IdItemPedido" ColumnName="IdItemPedido" />
+                <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+                <ScalarProperty Name="IdPraga" ColumnName="IdPraga" />
+                <ScalarProperty Name="IdEnderecoAplicacao" ColumnName="IdEnderecoAplicacao" />
+                <ScalarProperty Name="IdLocalAplicacao" ColumnName="IdLocalAplicacao" />
+                <ScalarProperty Name="IdTipoServico" ColumnName="IdTipoServico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orcamento">
+            <EntityTypeMapping TypeName="EPISistemaModel.Orcamento">
+              <MappingFragment StoreEntitySet="Orcamento">
+                <ScalarProperty Name="IdOrcamento" ColumnName="IdOrcamento" />
+                <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+                <ScalarProperty Name="IdAgendamento" ColumnName="IdAgendamento" />
+                <ScalarProperty Name="ValorOrcamento" ColumnName="ValorOrcamento" />
+                <ScalarProperty Name="IdFormaPagamento" ColumnName="IdFormaPagamento" />
+                <ScalarProperty Name="IdProduto" ColumnName="IdProduto" />
+                <ScalarProperty Name="DataOrcamento" ColumnName="DataOrcamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pedido">
+            <EntityTypeMapping TypeName="EPISistemaModel.Pedido">
+              <MappingFragment StoreEntitySet="Pedido">
+                <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="DtPedido" ColumnName="DtPedido" />
+                <ScalarProperty Name="IdStatusPedido" ColumnName="IdStatusPedido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Periodo">
+            <EntityTypeMapping TypeName="EPISistemaModel.Periodo">
+              <MappingFragment StoreEntitySet="Periodo">
+                <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+                <ScalarProperty Name="Periodo1" ColumnName="Periodo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Produto">
+            <EntityTypeMapping TypeName="EPISistemaModel.Produto">
+              <MappingFragment StoreEntitySet="Produto">
+                <ScalarProperty Name="IdProduto" ColumnName="IdProduto" />
+                <ScalarProperty Name="NomeProduto" ColumnName="NomeProduto" />
+                <ScalarProperty Name="Validade" ColumnName="Validade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusAgendamento">
+            <EntityTypeMapping TypeName="EPISistemaModel.StatusAgendamento">
+              <MappingFragment StoreEntitySet="StatusAgendamento">
+                <ScalarProperty Name="IdStatusAgendamento" ColumnName="IdStatusAgendamento" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusPedido">
+            <EntityTypeMapping TypeName="EPISistemaModel.StatusPedido">
+              <MappingFragment StoreEntitySet="StatusPedido">
+                <ScalarProperty Name="IdStatusPedido" ColumnName="IdStatusPedido" />
+                <ScalarProperty Name="StatusPedido1" ColumnName="StatusPedido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoCliente">
+            <EntityTypeMapping TypeName="EPISistemaModel.TipoCliente">
+              <MappingFragment StoreEntitySet="TipoCliente">
+                <ScalarProperty Name="IdTipoCliente" ColumnName="IdTipoCliente" />
+                <ScalarProperty Name="TipoCliente1" ColumnName="TipoCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoEndereco">
+            <EntityTypeMapping TypeName="EPISistemaModel.TipoEndereco">
+              <MappingFragment StoreEntitySet="TipoEndereco">
+                <ScalarProperty Name="IdTipoEndereco" ColumnName="IdTipoEndereco" />
+                <ScalarProperty Name="TipoEndereco1" ColumnName="TipoEndereco" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoSegmento">
+            <EntityTypeMapping TypeName="EPISistemaModel.TipoSegmento">
+              <MappingFragment StoreEntitySet="TipoSegmento">
+                <ScalarProperty Name="IdTipoSegmento" ColumnName="IdTipoSegmento" />
+                <ScalarProperty Name="TipoSegmento1" ColumnName="TipoSegmento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="PerfilMenu" TypeName="EPISistemaModel.PerfilMenu" StoreEntitySet="PerfilMenu">
+            <EndProperty Name="Menu">
+              <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
+            </EndProperty>
+            <EndProperty Name="Perfil">
+              <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="PerfilUsuario" TypeName="EPISistemaModel.PerfilUsuario" StoreEntitySet="PerfilUsuario">
+            <EndProperty Name="Perfil">
+              <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+            </EndProperty>
+            <EndProperty Name="Usuario">
+              <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

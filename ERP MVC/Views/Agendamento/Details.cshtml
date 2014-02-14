@@ -1,0 +1,92 @@
+﻿@model ERP_MVC.Agendamento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Agendamento</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdAgendamento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdAgendamento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdOrcamento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdOrcamento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataPrevisao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataPrevisao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Periodo.Periodo1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Periodo.Periodo1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HoraAgendada)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HoraAgendada)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HoraIni)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HoraIni)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HoraFim)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HoraFim)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdTecnico)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdTecnico)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdLocal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdLocal)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Disponibilidade.Disponibilidade1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Disponibilidade.Disponibilidade1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StatusAgendamento.Status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StatusAgendamento.Status)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

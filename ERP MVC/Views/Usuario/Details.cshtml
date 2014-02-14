@@ -1,0 +1,85 @@
+﻿@model ERP_MVC.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Usuario</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdUsuario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdUsuario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Perfil.Perfil1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Perfil.Perfil1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Funcionario.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Funcionario.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Login)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Login)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Senha)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Senha)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Status)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bloqueado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bloqueado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataInclusao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataInclusao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataAlteracao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataAlteracao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataUltimoAcesso)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataUltimoAcesso)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

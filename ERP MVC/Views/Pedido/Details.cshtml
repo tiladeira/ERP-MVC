@@ -1,0 +1,44 @@
+﻿@model ERP_MVC.Pedido
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Pedido</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdPedido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdPedido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cliente.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cliente.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DtPedido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DtPedido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StatusPedido.StatusPedido1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StatusPedido.StatusPedido1)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
