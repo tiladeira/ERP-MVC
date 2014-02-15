@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Create</h2>
@@ -13,14 +12,6 @@
 
     <fieldset>
         <legend>FormaPagamento</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IdFormaPagamento)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IdFormaPagamento)
-            @Html.ValidationMessageFor(model => model.IdFormaPagamento)
-        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.FormaPagamento1)

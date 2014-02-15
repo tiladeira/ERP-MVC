@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Cadastro de Pragas</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Incluir Novo", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table>
     <tr>
@@ -42,9 +42,9 @@
             @Html.DisplayFor(modelItem => item.ImgPraga)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdPraga }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdPraga }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdPraga })
         </td>
     </tr>
 }

@@ -511,11 +511,6 @@
     <Content Include="Views\Agendamento\Create.cshtml" />
     <Content Include="Views\Agendamento\Edit.cshtml" />
     <Content Include="Views\Agendamento\Delete.cshtml" />
-    <Content Include="Views\Praga\Index.cshtml" />
-    <Content Include="Views\Praga\Details.cshtml" />
-    <Content Include="Views\Praga\Create.cshtml" />
-    <Content Include="Views\Praga\Edit.cshtml" />
-    <Content Include="Views\Praga\Delete.cshtml" />
     <Content Include="Views\Produto\Index.cshtml" />
     <Content Include="Views\Produto\Details.cshtml" />
     <Content Include="Views\Produto\Create.cshtml" />
@@ -526,6 +521,11 @@
     <Content Include="Views\FormaPagamento\Create.cshtml" />
     <Content Include="Views\FormaPagamento\Edit.cshtml" />
     <Content Include="Views\FormaPagamento\Delete.cshtml" />
+    <Content Include="Views\Praga\Index.cshtml" />
+    <Content Include="Views\Praga\Details.cshtml" />
+    <Content Include="Views\Praga\Create.cshtml" />
+    <Content Include="Views\Praga\Edit.cshtml" />
+    <Content Include="Views\Praga\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
