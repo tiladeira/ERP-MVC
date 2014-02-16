@@ -224,6 +224,7 @@
     <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\PragaController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="Controllers\TipoClienteController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Departamento.cs">
       <DependentUpon>ERPModel.tt</DependentUpon>
@@ -526,9 +527,15 @@
     <Content Include="Views\Praga\Create.cshtml" />
     <Content Include="Views\Praga\Edit.cshtml" />
     <Content Include="Views\Praga\Delete.cshtml" />
+    <Content Include="Views\TipoCliente\Index.cshtml" />
+    <Content Include="Views\TipoCliente\Details.cshtml" />
+    <Content Include="Views\TipoCliente\Create.cshtml" />
+    <Content Include="Views\TipoCliente\Edit.cshtml" />
+    <Content Include="Views\TipoCliente\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Praga\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

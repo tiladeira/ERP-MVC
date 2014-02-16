@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -122,6 +123,23 @@ namespace ERP_MVC.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+
+        public ActionResult FileUpload()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult FileUpload(Praga praga)
+        {
+            foreach (string fileName in Request.Files)
+            {
+                HttpPostedFileBase postedFile = Request.Files[fileName];
+                postedFile.SaveAs(Server.MapPath("~/Images/Praga/") + Path.GetFileName(postedFile.FileName));
+            }
+
+            return View();
         }
     }
 }
