@@ -11,6 +11,8 @@ namespace ERP_MVC
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     
     public partial class Cliente
     {
@@ -18,8 +20,11 @@ namespace ERP_MVC
         {
             this.Pedido = new HashSet<Pedido>();
         }
-    
+
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdCliente { get; set; }
+
         public Nullable<int> IdTipoCliente { get; set; }
         public Nullable<int> IdProfisao { get; set; }
         public string Nome { get; set; }
