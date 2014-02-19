@@ -60,6 +60,11 @@ namespace ERP_MVC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            else
+            {
+                //var errors = ModelState.Select(x => x.Value.Errors).Where(y => y.Count > 0).ToList();
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+            }
 
             ViewBag.IdCidade = new SelectList(db.Cidade, "IdCidade", "Cidade1", cliente.IdCidade);
             ViewBag.IdProfisao = new SelectList(db.Profissao, "IdProfissao", "Profissao1", cliente.IdProfisao);

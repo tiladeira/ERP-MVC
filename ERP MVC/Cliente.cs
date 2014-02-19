@@ -13,7 +13,7 @@ namespace ERP_MVC
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    
+
     public partial class Cliente
     {
         public Cliente()
@@ -25,7 +25,9 @@ namespace ERP_MVC
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdCliente { get; set; }
 
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public Nullable<int> IdTipoCliente { get; set; }
+
         public Nullable<int> IdProfisao { get; set; }
         public string Nome { get; set; }
         public string CPF { get; set; }
@@ -63,7 +65,7 @@ namespace ERP_MVC
         public Nullable<System.DateTime> DataCadastro { get; set; }
         public Nullable<System.DateTime> DataAtualizacao { get; set; }
         public Nullable<int> Status { get; set; }
-    
+
         public virtual Cidade Cidade { get; set; }
         public virtual Profissao Profissao { get; set; }
         public virtual TipoCliente TipoCliente { get; set; }
