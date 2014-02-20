@@ -134,7 +134,12 @@
                 @Html.LabelFor(model => model.Sexo)
             </div>
             <div class="editor-field">
-                @Html.EditorFor(model => model.Sexo)
+                @Html.DropDownListFor(model => model.Sexo,
+                new SelectList(new List<Object>{
+                    new {IdSexo = 0, Sexo = ""},
+                    new {IdSexo = 1, Sexo = "M"},
+                    new {IdSexo = 2, Sexo = "F"}
+                }, "IdSexo", "Sexo", 0))
                 @Html.ValidationMessageFor(model => model.Sexo)
             </div>
 
