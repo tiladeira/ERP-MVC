@@ -3,6 +3,20 @@
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    <script src="~/Scripts/jquery.maskedinput-1.3.min.js"></script>    
+    <script type="text/javascript" lang="javascript">
+        var $IS = jQuery.noConflict();
+
+        $IS(document).ready(function () {
+            $IS("#DataNascimento").mask("99/99/9999");
+            $IS("#CPF").mask("999.999.999-99");
+            $IS("#RG").mask("99.999.999-9");
+            $IS("#DataEmissRG").mask("99/99/9999");
+            $IS("#DataAdmissao").mask("99/99/9999");
+            $IS("#DataInclusao").mask("99/99/9999");
+        });
+    </script>
 }
 
 <h2>Novo Funcionário</h2>
@@ -13,11 +27,6 @@
 
     <fieldset>
         <legend>Funcionario</legend>
-
-        <div class="editor-field" style="display:none;">
-            @Html.EditorFor(model => model.IdFuncionario)
-            @Html.ValidationMessageFor(model => model.IdFuncionario)
-        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Nome)
@@ -39,7 +48,12 @@
             @Html.LabelFor(model => model.Sexo)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Sexo)
+            @Html.DropDownListFor(model => model.Sexo,
+                new SelectList(new List<Object>{
+                    new {IdSexo = 0, Sexo = ""},
+                    new {IdSexo = 1, Sexo = "M"},
+                    new {IdSexo = 2, Sexo = "F"}
+                }, "IdSexo", "Sexo", 0))
             @Html.ValidationMessageFor(model => model.Sexo)
         </div>
 
@@ -128,12 +142,12 @@
             @Html.ValidationMessageFor(model => model.IdBeneficio)
         </div>
 
-        <div class="editor-field"  style="display:none;">
+        <div class="editor-field">
             @Html.EditorFor(model => model.DataInclusao)
             @Html.ValidationMessageFor(model => model.DataInclusao)
         </div>
 
-        <div class="editor-field"  style="display:none;">
+        <div class="editor-field">
             @Html.EditorFor(model => model.Status)
             @Html.ValidationMessageFor(model => model.Status)
         </div>
