@@ -20,21 +20,33 @@ namespace ERP_MVC
         {
             this.Usuario = new HashSet<Usuario>();
         }
-    
+
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdFuncionario { get; set; }
-        public string Nome { get; set; }        
+
+        public string Nome { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public System.DateTime DataNascimento { get; set; }
+
         public string Sexo { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
         public string OrgEmissRG { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public System.DateTime DataEmissRG { get; set; }
+
         public string CNH { get; set; }
         public int IdDepartamento { get; set; }
         public int IdProfissao { get; set; }
         public int IdNivel { get; set; }
         public int IdRegimeContratacao { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public System.DateTime DataAdmissao { get; set; }
+
         public Nullable<int> IdBeneficio { get; set; }
         public System.DateTime DataInclusao { get; set; }
         public Nullable<int> Status { get; set; }
