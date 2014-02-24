@@ -1,0 +1,29 @@
+﻿@model ERP_MVC.Disponibilidade
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Disponibilidade</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdDisponibilidade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdDisponibilidade)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Disponibilidade1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Disponibilidade1)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

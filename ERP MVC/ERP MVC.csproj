@@ -220,6 +220,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AgendamentoController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\DisponibilidadeController.cs" />
     <Compile Include="Controllers\FormaPagamentoController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -786,6 +787,11 @@
     <Content Include="Views\TipoCliente\Create.cshtml" />
     <Content Include="Views\TipoCliente\Edit.cshtml" />
     <Content Include="Views\TipoCliente\Delete.cshtml" />
+    <Content Include="Views\Disponibilidade\Index.cshtml" />
+    <Content Include="Views\Disponibilidade\Details.cshtml" />
+    <Content Include="Views\Disponibilidade\Create.cshtml" />
+    <Content Include="Views\Disponibilidade\Edit.cshtml" />
+    <Content Include="Views\Disponibilidade\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
