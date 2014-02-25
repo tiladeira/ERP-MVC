@@ -680,6 +680,9 @@
     <Content Include="bootstrap\img\select\Descr.WD3" />
     <Content Include="bootstrap\img\uniform\Descr.WD3" />
     <Content Include="Controle Dev.xlsx" />
+    <Content Include="Documentos\ES_Evento_1_Atender_Cliente.doc" />
+    <Content Include="Documentos\ES_Evento_2_Emitir_Pedido_Orcamento_020313.doc" />
+    <Content Include="Documentos\ES_Evento_3_Calcular_Orcamento_30052013.doc" />
     <None Include="Properties\PublishProfiles\ERP.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Images\epi logo.jpg" />
