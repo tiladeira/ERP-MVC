@@ -75,6 +75,7 @@
         <AssociationConnector Association="EPISistemaModel.FK_Pedido_StatusPedido" ManuallyRouted="false" />
         <AssociationConnector Association="EPISistemaModel.PerfilMenu" ManuallyRouted="false" />
         <AssociationConnector Association="EPISistemaModel.PerfilUsuario" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EPISistemaModel.ClientePF" Width="1.5" PointX="9.8011023783130113" PointY="13.263913801528473" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

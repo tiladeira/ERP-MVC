@@ -1,0 +1,104 @@
+﻿@model ERP_MVC.ClientePF
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>ClientePF</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdClientePF)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdClientePF)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdTipoCliente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdTipoCliente)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdProfisao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdProfisao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CPF)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CPF)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RG)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataExpedicao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataExpedicao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrgaoEmissor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrgaoEmissor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CNH)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CNH)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataNascimento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataNascimento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sexo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sexo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EMail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EMail)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EPISistemaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EPISistemaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="EPISistemaModelStoreContainer">
           <EntitySet Name="Acao" EntityType="EPISistemaModel.Store.Acao" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Aplicacao" EntityType="EPISistemaModel.Store.Aplicacao" store:Type="Tables" Schema="dbo" />
@@ -35,6 +35,22 @@
           <EntitySet Name="Usuario" EntityType="EPISistemaModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Vetor" EntityType="EPISistemaModel.Store.Vetor" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Agendamento" EntityType="EPISistemaModel.Store.Agendamento" store:Type="Tables" Schema="episistemadb" />
+          <EntitySet Name="ClientePF" EntityType="EPISistemaModel.Store.ClientePF" store:Type="Tables" store:Schema="episistemadb" store:Name="ClientePF">
+            <DefiningQuery>SELECT 
+      [ClientePF].[IdClientePF] AS [IdClientePF], 
+      [ClientePF].[IdTipoCliente] AS [IdTipoCliente], 
+      [ClientePF].[IdProfisao] AS [IdProfisao], 
+      [ClientePF].[Nome] AS [Nome], 
+      [ClientePF].[CPF] AS [CPF], 
+      [ClientePF].[RG] AS [RG], 
+      [ClientePF].[DataExpedicao] AS [DataExpedicao], 
+      [ClientePF].[OrgaoEmissor] AS [OrgaoEmissor], 
+      [ClientePF].[CNH] AS [CNH], 
+      [ClientePF].[DataNascimento] AS [DataNascimento], 
+      [ClientePF].[Sexo] AS [Sexo], 
+      [ClientePF].[EMail] AS [EMail]
+      FROM [episistemadb].[ClientePF] AS [ClientePF]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Disponibilidade" EntityType="EPISistemaModel.Store.Disponibilidade" store:Type="Tables" Schema="episistemadb" />
           <EntitySet Name="FormaPagamento" EntityType="EPISistemaModel.Store.FormaPagamento" store:Type="Tables" Schema="episistemadb" />
           <EntitySet Name="ItemPedido" EntityType="EPISistemaModel.Store.ItemPedido" store:Type="Tables" Schema="episistemadb" />
@@ -485,6 +501,26 @@
           <Property Name="IdLocal" Type="int" Nullable="false" />
           <Property Name="IdDisponibilidade" Type="int" Nullable="false" />
           <Property Name="IdStatus" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'EPISistema.episistemadb.ClientePF' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ClientePF">
+          <Key>
+            <PropertyRef Name="IdClientePF" />
+          </Key>
+          <Property Name="IdClientePF" Type="int" Nullable="false" />
+          <Property Name="IdTipoCliente" Type="int" />
+          <Property Name="IdProfisao" Type="int" />
+          <Property Name="Nome" Type="varchar" MaxLength="30" />
+          <Property Name="CPF" Type="varchar" MaxLength="14" />
+          <Property Name="RG" Type="varchar" MaxLength="12" />
+          <Property Name="DataExpedicao" Type="datetime" />
+          <Property Name="OrgaoEmissor" Type="varchar" MaxLength="6" />
+          <Property Name="CNH" Type="varchar" MaxLength="11" />
+          <Property Name="DataNascimento" Type="datetime" />
+          <Property Name="Sexo" Type="varchar" MaxLength="1" />
+          <Property Name="EMail" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Disponibilidade">
           <Key>
@@ -978,8 +1014,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EPISistemaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1147,6 +1182,7 @@
             <End Role="Perfil" EntitySet="Perfil" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
+          <EntitySet Name="ClientePF" EntityType="EPISistemaModel.ClientePF" />
         </EntityContainer>
         <EntityType Name="Acao">
           <Key>
@@ -1952,6 +1988,23 @@
           <End Role="Perfil" Type="EPISistemaModel.Perfil" Multiplicity="*" />
           <End Role="Usuario" Type="EPISistemaModel.Usuario" Multiplicity="*" />
         </Association>
+        <EntityType Name="ClientePF">
+          <Key>
+            <PropertyRef Name="IdClientePF" />
+          </Key>
+          <Property Type="Int32" Name="IdClientePF" Nullable="false" />
+          <Property Type="Int32" Name="IdTipoCliente" />
+          <Property Type="Int32" Name="IdProfisao" />
+          <Property Type="String" Name="Nome" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CPF" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RG" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DataExpedicao" Precision="3" />
+          <Property Type="String" Name="OrgaoEmissor" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CNH" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DataNascimento" Precision="3" />
+          <Property Type="String" Name="Sexo" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMail" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2399,6 +2452,24 @@
               <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="ClientePF">
+            <EntityTypeMapping TypeName="EPISistemaModel.ClientePF">
+              <MappingFragment StoreEntitySet="ClientePF">
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+                <ScalarProperty Name="CNH" ColumnName="CNH" />
+                <ScalarProperty Name="OrgaoEmissor" ColumnName="OrgaoEmissor" />
+                <ScalarProperty Name="DataExpedicao" ColumnName="DataExpedicao" />
+                <ScalarProperty Name="RG" ColumnName="RG" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="IdProfisao" ColumnName="IdProfisao" />
+                <ScalarProperty Name="IdTipoCliente" ColumnName="IdTipoCliente" />
+                <ScalarProperty Name="IdClientePF" ColumnName="IdClientePF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

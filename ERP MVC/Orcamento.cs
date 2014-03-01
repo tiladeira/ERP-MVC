@@ -11,25 +11,15 @@ namespace ERP_MVC
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     
     public partial class Orcamento
     {
-        [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IdOrcamento { get; set; }
-
         public int IdPedido { get; set; }
         public int IdAgendamento { get; set; }
-
-        [Required(ErrorMessage = "Campo obrigatório!")]
         public decimal ValorOrcamento { get; set; }
-
         public int IdFormaPagamento { get; set; }
         public int IdProduto { get; set; }
-
-        [Required(ErrorMessage = "Campo obrigatório!")]
         public System.DateTime DataOrcamento { get; set; }
     
         public virtual Agendamento Agendamento { get; set; }

@@ -64,5 +64,6 @@ namespace ERP_MVC
         public DbSet<TipoCliente> TipoCliente { get; set; }
         public DbSet<TipoEndereco> TipoEndereco { get; set; }
         public DbSet<TipoSegmento> TipoSegmento { get; set; }
+        public DbSet<ClientePF> ClientePF { get; set; }
     }
 }

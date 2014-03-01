@@ -11,23 +11,17 @@ namespace ERP_MVC
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class FormaPagamento
     {
         public FormaPagamento()
         {
             this.Orcamento = new HashSet<Orcamento>();
         }
-
-        [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+    
         public int IdFormaPagamento { get; set; }
-
-        [Required(ErrorMessage = "Campo obrigatório!")]
         public string FormaPagamento1 { get; set; }
-
+    
         public virtual ICollection<Orcamento> Orcamento { get; set; }
     }
 }

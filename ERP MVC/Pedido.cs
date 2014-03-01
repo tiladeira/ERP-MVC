@@ -11,8 +11,6 @@ namespace ERP_MVC
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     
     public partial class Pedido
     {
@@ -21,15 +19,10 @@ namespace ERP_MVC
             this.ItemPedido = new HashSet<ItemPedido>();
             this.Orcamento = new HashSet<Orcamento>();
         }
-
-        [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+    
         public int IdPedido { get; set; }
         public Nullable<int> IdCliente { get; set; }
-
-        [Required(ErrorMessage = "Campo obrigatório!")]
         public Nullable<System.DateTime> DtPedido { get; set; }
-
         public Nullable<int> IdStatusPedido { get; set; }
     
         public virtual Cliente Cliente { get; set; }
