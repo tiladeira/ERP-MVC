@@ -15,16 +15,35 @@ namespace ERP_MVC
     public partial class ClientePF
     {
         public int IdClientePF { get; set; }
-        public Nullable<int> IdTipoCliente { get; set; }
+        public int IdTipoCliente { get; set; }
         public Nullable<int> IdProfisao { get; set; }
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
-        public Nullable<System.DateTime> DataExpedicao { get; set; }
+        public System.DateTime DataExpedicao { get; set; }
         public string OrgaoEmissor { get; set; }
         public string CNH { get; set; }
-        public Nullable<System.DateTime> DataNascimento { get; set; }
+        public System.DateTime DataNascimento { get; set; }
         public string Sexo { get; set; }
         public string EMail { get; set; }
+        public int IdTipoEndereco { get; set; }
+        public string Endereco { get; set; }
+        public string Numero { get; set; }
+        public string Complemento { get; set; }
+        public string Bairro { get; set; }
+        public string CEP { get; set; }
+        public int IdEstado { get; set; }
+        public int IdCidade { get; set; }
+        public string PontoReferencia { get; set; }
+        public string FoneContato { get; set; }
+        public string CelContato { get; set; }
+        public string FoneComlContato { get; set; }
+        public System.DateTime DataCadastro { get; set; }
+        public Nullable<System.DateTime> DataAtualizacao { get; set; }
+        public int Status { get; set; }
+    
+        public virtual Profissao Profissao { get; set; }
+        public virtual TipoCliente TipoCliente { get; set; }
+        public virtual TipoEndereco TipoEndereco { get; set; }
     }
 }

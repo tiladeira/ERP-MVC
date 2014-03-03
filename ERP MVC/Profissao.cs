@@ -16,15 +16,15 @@ namespace ERP_MVC
     {
         public Profissao()
         {
-            this.Cliente = new HashSet<Cliente>();
             this.Funcionario = new HashSet<Funcionario>();
+            this.ClientePF = new HashSet<ClientePF>();
         }
     
         public int IdProfissao { get; set; }
         public int CodProfissao { get; set; }
         public string Profissao1 { get; set; }
     
-        public virtual ICollection<Cliente> Cliente { get; set; }
         public virtual ICollection<Funcionario> Funcionario { get; set; }
+        public virtual ICollection<ClientePF> ClientePF { get; set; }
     }
 }

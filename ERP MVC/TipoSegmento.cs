@@ -16,12 +16,12 @@ namespace ERP_MVC
     {
         public TipoSegmento()
         {
-            this.Cliente = new HashSet<Cliente>();
+            this.ClientePJ = new HashSet<ClientePJ>();
         }
     
         public int IdTipoSegmento { get; set; }
         public string TipoSegmento1 { get; set; }
     
-        public virtual ICollection<Cliente> Cliente { get; set; }
+        public virtual ICollection<ClientePJ> ClientePJ { get; set; }
     }
 }

@@ -1,0 +1,233 @@
+﻿@model ERP_MVC.ClientePJ
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ClientePJ</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdClientePJ)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdClientePJ)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoCliente.TipoCliente1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoCliente.TipoCliente1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NomeFantasia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomeFantasia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RazaoSocial)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RazaoSocial)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CNPJ)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CNPJ)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoSegmento.TipoSegmento1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoSegmento.TipoSegmento1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AreaAtividade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AreaAtividade)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NomeSocios)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomeSocios)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataFundacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataFundacao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumFuncionarios)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumFuncionarios)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.InscEsdual)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InscEsdual)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.InsMunicipal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InsMunicipal)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Site)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Site)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Matriz)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Matriz)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GrupoEmpresarial)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GrupoEmpresarial)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoEndereco.TipoEndereco1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoEndereco.TipoEndereco1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Endereco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Endereco)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Numero)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Numero)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Complemento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Complemento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bairro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bairro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CEP)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CEP)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdEstado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdEstado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdCidade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdCidade)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PontoReferencia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PontoReferencia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FoneContato)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FoneContato)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CelContato)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CelContato)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FoneComlContato)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FoneComlContato)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataCadastro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataCadastro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataAtualizacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataAtualizacao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Status)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

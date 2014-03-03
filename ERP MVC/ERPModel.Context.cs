@@ -30,7 +30,6 @@ namespace ERP_MVC
         public DbSet<AreaAtividade> AreaAtividade { get; set; }
         public DbSet<Beneficio> Beneficio { get; set; }
         public DbSet<Cidade> Cidade { get; set; }
-        public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Departamento> Departamento { get; set; }
         public DbSet<Diluente> Diluente { get; set; }
         public DbSet<Estado> Estado { get; set; }
@@ -52,6 +51,8 @@ namespace ERP_MVC
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Vetor> Vetor { get; set; }
         public DbSet<Agendamento> Agendamento { get; set; }
+        public DbSet<ClientePF> ClientePF { get; set; }
+        public DbSet<ClientePJ> ClientePJ { get; set; }
         public DbSet<Disponibilidade> Disponibilidade { get; set; }
         public DbSet<FormaPagamento> FormaPagamento { get; set; }
         public DbSet<ItemPedido> ItemPedido { get; set; }
@@ -64,6 +65,5 @@ namespace ERP_MVC
         public DbSet<TipoCliente> TipoCliente { get; set; }
         public DbSet<TipoEndereco> TipoEndereco { get; set; }
         public DbSet<TipoSegmento> TipoSegmento { get; set; }
-        public DbSet<ClientePF> ClientePF { get; set; }
     }
 }

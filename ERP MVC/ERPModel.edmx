@@ -4,14 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="EPISistemaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="EPISistemaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="EPISistemaModelStoreContainer">
           <EntitySet Name="Acao" EntityType="EPISistemaModel.Store.Acao" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Aplicacao" EntityType="EPISistemaModel.Store.Aplicacao" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="AreaAtividade" EntityType="EPISistemaModel.Store.AreaAtividade" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Beneficio" EntityType="EPISistemaModel.Store.Beneficio" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Cidade" EntityType="EPISistemaModel.Store.Cidade" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Cliente" EntityType="EPISistemaModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Departamento" EntityType="EPISistemaModel.Store.Departamento" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Diluente" EntityType="EPISistemaModel.Store.Diluente" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Estado" EntityType="EPISistemaModel.Store.Estado" store:Type="Tables" Schema="dbo" />
@@ -48,12 +47,34 @@
       [ClientePF].[CNH] AS [CNH], 
       [ClientePF].[DataNascimento] AS [DataNascimento], 
       [ClientePF].[Sexo] AS [Sexo], 
-      [ClientePF].[EMail] AS [EMail]
+      [ClientePF].[EMail] AS [EMail], 
+      [ClientePF].[IdTipoEndereco] AS [IdTipoEndereco], 
+      [ClientePF].[Endereco] AS [Endereco], 
+      [ClientePF].[Numero] AS [Numero], 
+      [ClientePF].[Complemento] AS [Complemento], 
+      [ClientePF].[Bairro] AS [Bairro], 
+      [ClientePF].[CEP] AS [CEP], 
+      [ClientePF].[IdEstado] AS [IdEstado], 
+      [ClientePF].[IdCidade] AS [IdCidade], 
+      [ClientePF].[PontoReferencia] AS [PontoReferencia], 
+      [ClientePF].[FoneContato] AS [FoneContato], 
+      [ClientePF].[CelContato] AS [CelContato], 
+      [ClientePF].[FoneComlContato] AS [FoneComlContato], 
+      [ClientePF].[DataCadastro] AS [DataCadastro], 
+      [ClientePF].[DataAtualizacao] AS [DataAtualizacao], 
+      [ClientePF].[Status] AS [Status]
       FROM [episistemadb].[ClientePF] AS [ClientePF]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="ClientePJ" EntityType="EPISistemaModel.Store.ClientePJ" store:Type="Tables" Schema="episistemadb" />
           <EntitySet Name="Disponibilidade" EntityType="EPISistemaModel.Store.Disponibilidade" store:Type="Tables" Schema="episistemadb" />
           <EntitySet Name="FormaPagamento" EntityType="EPISistemaModel.Store.FormaPagamento" store:Type="Tables" Schema="episistemadb" />
           <EntitySet Name="ItemPedido" EntityType="EPISistemaModel.Store.ItemPedido" store:Type="Tables" Schema="episistemadb" />
+          <EntitySet Name="ListaPedido" EntityType="EPISistemaModel.Store.ListaPedido" store:Type="Tables" store:Schema="episistemadb" store:Name="ListaPedido">
+            <DefiningQuery>SELECT 
+      [ListaPedido].[IdListaPedido] AS [IdListaPedido], 
+      [ListaPedido].[IdPedido] AS [IdPedido]
+      FROM [episistemadb].[ListaPedido] AS [ListaPedido]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Orcamento" EntityType="EPISistemaModel.Store.Orcamento" store:Type="Tables" Schema="episistemadb" />
           <EntitySet Name="Pedido" EntityType="EPISistemaModel.Store.Pedido" store:Type="Tables" Schema="episistemadb" />
           <EntitySet Name="Periodo" EntityType="EPISistemaModel.Store.Periodo" store:Type="Tables" Schema="episistemadb" />
@@ -79,25 +100,29 @@
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Cidade" EntitySet="Cidade" />
           </AssociationSet>
-          <AssociationSet Name="FK_Cliente_Cidade" Association="EPISistemaModel.Store.FK_Cliente_Cidade">
-            <End Role="Cidade" EntitySet="Cidade" />
-            <End Role="Cliente" EntitySet="Cliente" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cliente_Profissao" Association="EPISistemaModel.Store.FK_Cliente_Profissao">
+          <AssociationSet Name="FK_ClientePF_Profissao" Association="EPISistemaModel.Store.FK_ClientePF_Profissao">
             <End Role="Profissao" EntitySet="Profissao" />
-            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="ClientePF" EntitySet="ClientePF" />
           </AssociationSet>
-          <AssociationSet Name="FK_Cliente_TipoCliente" Association="EPISistemaModel.Store.FK_Cliente_TipoCliente">
+          <AssociationSet Name="FK_ClientePF_TipoCliente" Association="EPISistemaModel.Store.FK_ClientePF_TipoCliente">
             <End Role="TipoCliente" EntitySet="TipoCliente" />
-            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="ClientePF" EntitySet="ClientePF" />
           </AssociationSet>
-          <AssociationSet Name="FK_Cliente_TipoEndereco" Association="EPISistemaModel.Store.FK_Cliente_TipoEndereco">
+          <AssociationSet Name="FK_ClientePF_TipoEndereco" Association="EPISistemaModel.Store.FK_ClientePF_TipoEndereco">
             <End Role="TipoEndereco" EntitySet="TipoEndereco" />
-            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="ClientePF" EntitySet="ClientePF" />
           </AssociationSet>
-          <AssociationSet Name="FK_Cliente_TipoSegmento" Association="EPISistemaModel.Store.FK_Cliente_TipoSegmento">
+          <AssociationSet Name="FK_ClientePJ_TipoCliente" Association="EPISistemaModel.Store.FK_ClientePJ_TipoCliente">
+            <End Role="TipoCliente" EntitySet="TipoCliente" />
+            <End Role="ClientePJ" EntitySet="ClientePJ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientePJ_TipoEndereco" Association="EPISistemaModel.Store.FK_ClientePJ_TipoEndereco">
+            <End Role="TipoEndereco" EntitySet="TipoEndereco" />
+            <End Role="ClientePJ" EntitySet="ClientePJ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientePJ_TipoSegmento" Association="EPISistemaModel.Store.FK_ClientePJ_TipoSegmento">
             <End Role="TipoSegmento" EntitySet="TipoSegmento" />
-            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="ClientePJ" EntitySet="ClientePJ" />
           </AssociationSet>
           <AssociationSet Name="FK_Estado_Pais" Association="EPISistemaModel.Store.FK_Estado_Pais">
             <End Role="Pais" EntitySet="Pais" />
@@ -127,10 +152,6 @@
             <End Role="LocalAplicacao" EntitySet="LocalAplicacao" />
             <End Role="ItemPedido" EntitySet="ItemPedido" />
           </AssociationSet>
-          <AssociationSet Name="FK_ItemPedido_Pedido" Association="EPISistemaModel.Store.FK_ItemPedido_Pedido">
-            <End Role="Pedido" EntitySet="Pedido" />
-            <End Role="ItemPedido" EntitySet="ItemPedido" />
-          </AssociationSet>
           <AssociationSet Name="FK_ItemPedido_Praga" Association="EPISistemaModel.Store.FK_ItemPedido_Praga">
             <End Role="Praga" EntitySet="Praga" />
             <End Role="ItemPedido" EntitySet="ItemPedido" />
@@ -138,6 +159,14 @@
           <AssociationSet Name="FK_ItemPedido_TipoServico" Association="EPISistemaModel.Store.FK_ItemPedido_TipoServico">
             <End Role="TipoServico" EntitySet="TipoServico" />
             <End Role="ItemPedido" EntitySet="ItemPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListaPedido_ItemPedido" Association="EPISistemaModel.Store.FK_ListaPedido_ItemPedido">
+            <End Role="ItemPedido" EntitySet="ItemPedido" />
+            <End Role="ListaPedido" EntitySet="ListaPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListaPedido_Pedido" Association="EPISistemaModel.Store.FK_ListaPedido_Pedido">
+            <End Role="Pedido" EntitySet="Pedido" />
+            <End Role="ListaPedido" EntitySet="ListaPedido" />
           </AssociationSet>
           <AssociationSet Name="FK_Orcamento_Agendamento" Association="EPISistemaModel.Store.FK_Orcamento_Agendamento">
             <End Role="Agendamento" EntitySet="Agendamento" />
@@ -154,10 +183,6 @@
           <AssociationSet Name="FK_Orcamento_Produto" Association="EPISistemaModel.Store.FK_Orcamento_Produto">
             <End Role="Produto" EntitySet="Produto" />
             <End Role="Orcamento" EntitySet="Orcamento" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Pedido_Cliente" Association="EPISistemaModel.Store.FK_Pedido_Cliente">
-            <End Role="Cliente" EntitySet="Cliente" />
-            <End Role="Pedido" EntitySet="Pedido" />
           </AssociationSet>
           <AssociationSet Name="FK_Pedido_StatusPedido" Association="EPISistemaModel.Store.FK_Pedido_StatusPedido">
             <End Role="StatusPedido" EntitySet="StatusPedido" />
@@ -234,50 +259,6 @@
           <Property Name="IdCidade" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="IdEstado" Type="int" Nullable="false" />
           <Property Name="Cidade" Type="nvarchar" Nullable="false" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Cliente">
-          <Key>
-            <PropertyRef Name="IdCliente" />
-          </Key>
-          <Property Name="IdCliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="IdTipoCliente" Type="int" />
-          <Property Name="IdProfisao" Type="int" />
-          <Property Name="Nome" Type="varchar" MaxLength="30" />
-          <Property Name="CPF" Type="varchar" MaxLength="14" />
-          <Property Name="RG" Type="varchar" MaxLength="12" />
-          <Property Name="DataExpedicao" Type="datetime" />
-          <Property Name="OrgaoEmissor" Type="varchar" MaxLength="6" />
-          <Property Name="CNH" Type="varchar" MaxLength="11" />
-          <Property Name="DataNascimento" Type="datetime" />
-          <Property Name="Sexo" Type="varchar" MaxLength="1" />
-          <Property Name="EMail" Type="varchar" MaxLength="50" />
-          <Property Name="NomeFantasia" Type="varchar" MaxLength="80" />
-          <Property Name="RazaoSocial" Type="varchar" MaxLength="80" />
-          <Property Name="CNPJ" Type="varchar" MaxLength="18" />
-          <Property Name="IdTipoSegmento" Type="int" />
-          <Property Name="AreaAtividade" Type="nvarchar" MaxLength="60" />
-          <Property Name="NomeSocios" Type="varchar" MaxLength="255" />
-          <Property Name="DataFundacao" Type="datetime" />
-          <Property Name="NumFuncionarios" Type="int" />
-          <Property Name="InscEsdual" Type="nvarchar" MaxLength="40" />
-          <Property Name="InsMunicipal" Type="nvarchar" MaxLength="40" />
-          <Property Name="Site" Type="nvarchar" MaxLength="100" />
-          <Property Name="Matriz" Type="bit" />
-          <Property Name="GrupoEmpresarial" Type="nvarchar" MaxLength="100" />
-          <Property Name="IdCidade" Type="int" />
-          <Property Name="IdTipoEndereco" Type="int" />
-          <Property Name="Endereco" Type="varchar" MaxLength="100" />
-          <Property Name="Numero" Type="varchar" MaxLength="50" />
-          <Property Name="Complemento" Type="varchar" MaxLength="20" />
-          <Property Name="Bairro" Type="varchar" MaxLength="20" />
-          <Property Name="CEP" Type="varchar" MaxLength="9" />
-          <Property Name="PontoReferencia" Type="varchar" MaxLength="100" />
-          <Property Name="FoneContato" Type="varchar" MaxLength="16" />
-          <Property Name="CelContato" Type="varchar" MaxLength="16" />
-          <Property Name="FoneComlContato" Type="varchar" MaxLength="16" />
-          <Property Name="DataCadastro" Type="datetime" />
-          <Property Name="DataAtualizacao" Type="datetime" />
-          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="Departamento">
           <Key>
@@ -508,19 +489,88 @@
         <EntityType Name="ClientePF">
           <Key>
             <PropertyRef Name="IdClientePF" />
+            <PropertyRef Name="IdTipoCliente" />
+            <PropertyRef Name="Nome" />
+            <PropertyRef Name="CPF" />
+            <PropertyRef Name="RG" />
+            <PropertyRef Name="DataExpedicao" />
+            <PropertyRef Name="OrgaoEmissor" />
+            <PropertyRef Name="DataNascimento" />
+            <PropertyRef Name="Sexo" />
+            <PropertyRef Name="IdTipoEndereco" />
+            <PropertyRef Name="Endereco" />
+            <PropertyRef Name="Numero" />
+            <PropertyRef Name="Bairro" />
+            <PropertyRef Name="CEP" />
+            <PropertyRef Name="IdEstado" />
+            <PropertyRef Name="IdCidade" />
+            <PropertyRef Name="FoneContato" />
+            <PropertyRef Name="DataCadastro" />
+            <PropertyRef Name="Status" />
           </Key>
           <Property Name="IdClientePF" Type="int" Nullable="false" />
-          <Property Name="IdTipoCliente" Type="int" />
+          <Property Name="IdTipoCliente" Type="int" Nullable="false" />
           <Property Name="IdProfisao" Type="int" />
-          <Property Name="Nome" Type="varchar" MaxLength="30" />
-          <Property Name="CPF" Type="varchar" MaxLength="14" />
-          <Property Name="RG" Type="varchar" MaxLength="12" />
-          <Property Name="DataExpedicao" Type="datetime" />
-          <Property Name="OrgaoEmissor" Type="varchar" MaxLength="6" />
+          <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="CPF" Type="varchar" Nullable="false" MaxLength="14" />
+          <Property Name="RG" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="DataExpedicao" Type="datetime" Nullable="false" />
+          <Property Name="OrgaoEmissor" Type="varchar" Nullable="false" MaxLength="6" />
           <Property Name="CNH" Type="varchar" MaxLength="11" />
-          <Property Name="DataNascimento" Type="datetime" />
-          <Property Name="Sexo" Type="varchar" MaxLength="1" />
+          <Property Name="DataNascimento" Type="datetime" Nullable="false" />
+          <Property Name="Sexo" Type="varchar" Nullable="false" MaxLength="1" />
           <Property Name="EMail" Type="varchar" MaxLength="50" />
+          <Property Name="IdTipoEndereco" Type="int" Nullable="false" />
+          <Property Name="Endereco" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Numero" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Complemento" Type="varchar" MaxLength="20" />
+          <Property Name="Bairro" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CEP" Type="varchar" Nullable="false" MaxLength="9" />
+          <Property Name="IdEstado" Type="int" Nullable="false" />
+          <Property Name="IdCidade" Type="int" Nullable="false" />
+          <Property Name="PontoReferencia" Type="varchar" MaxLength="100" />
+          <Property Name="FoneContato" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="CelContato" Type="varchar" MaxLength="16" />
+          <Property Name="FoneComlContato" Type="varchar" MaxLength="16" />
+          <Property Name="DataCadastro" Type="datetime" Nullable="false" />
+          <Property Name="DataAtualizacao" Type="datetime" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClientePJ">
+          <Key>
+            <PropertyRef Name="IdClientePJ" />
+          </Key>
+          <Property Name="IdClientePJ" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdTipoCliente" Type="int" Nullable="false" />
+          <Property Name="NomeFantasia" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="RazaoSocial" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="CNPJ" Type="varchar" Nullable="false" MaxLength="18" />
+          <Property Name="IdTipoSegmento" Type="int" />
+          <Property Name="AreaAtividade" Type="nvarchar" MaxLength="60" />
+          <Property Name="NomeSocios" Type="varchar" MaxLength="255" />
+          <Property Name="DataFundacao" Type="datetime" />
+          <Property Name="NumFuncionarios" Type="int" />
+          <Property Name="InscEsdual" Type="nvarchar" MaxLength="40" />
+          <Property Name="InsMunicipal" Type="nvarchar" MaxLength="40" />
+          <Property Name="Site" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Matriz" Type="bit" />
+          <Property Name="GrupoEmpresarial" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdTipoEndereco" Type="int" Nullable="false" />
+          <Property Name="Endereco" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Numero" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Complemento" Type="varchar" MaxLength="20" />
+          <Property Name="Bairro" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CEP" Type="varchar" Nullable="false" MaxLength="9" />
+          <Property Name="IdEstado" Type="int" Nullable="false" />
+          <Property Name="IdCidade" Type="int" Nullable="false" />
+          <Property Name="PontoReferencia" Type="varchar" MaxLength="100" />
+          <Property Name="FoneContato" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="CelContato" Type="varchar" MaxLength="16" />
+          <Property Name="FoneComlContato" Type="varchar" MaxLength="16" />
+          <Property Name="DataCadastro" Type="datetime" Nullable="false" />
+          <Property Name="DataAtualizacao" Type="datetime" />
+          <Property Name="Status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Disponibilidade">
           <Key>
@@ -541,11 +591,22 @@
             <PropertyRef Name="IdItemPedido" />
           </Key>
           <Property Name="IdItemPedido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="IdPedido" Type="int" Nullable="false" />
+          <Property Name="IdListaPedido" Type="int" Nullable="false" />
           <Property Name="IdPraga" Type="int" Nullable="false" />
           <Property Name="IdEnderecoAplicacao" Type="int" />
           <Property Name="IdLocalAplicacao" Type="int" Nullable="false" />
           <Property Name="IdTipoServico" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'EPISistema.episistemadb.ListaPedido' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ListaPedido">
+          <Key>
+            <PropertyRef Name="IdListaPedido" />
+            <PropertyRef Name="IdPedido" />
+          </Key>
+          <Property Name="IdListaPedido" Type="int" Nullable="false" />
+          <Property Name="IdPedido" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Orcamento">
           <Key>
@@ -564,8 +625,11 @@
             <PropertyRef Name="IdPedido" />
           </Key>
           <Property Name="IdPedido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="IdCliente" Type="int" />
+          <Property Name="IdClientePF" Type="int" Nullable="false" />
+          <Property Name="IdClientePJ" Type="int" Nullable="false" />
+          <Property Name="IdTipoCliente" Type="int" />
           <Property Name="DtPedido" Type="datetime" />
+          <Property Name="IdListaPedido" Type="int" Nullable="false" />
           <Property Name="IdStatusPedido" Type="int" />
         </EntityType>
         <EntityType Name="Periodo">
@@ -666,62 +730,74 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Cliente_Cidade">
-          <End Role="Cidade" Type="EPISistemaModel.Store.Cidade" Multiplicity="0..1" />
-          <End Role="Cliente" Type="EPISistemaModel.Store.Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Cidade">
-              <PropertyRef Name="IdCidade" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="IdCidade" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cliente_Profissao">
+        <Association Name="FK_ClientePF_Profissao">
           <End Role="Profissao" Type="EPISistemaModel.Store.Profissao" Multiplicity="0..1" />
-          <End Role="Cliente" Type="EPISistemaModel.Store.Cliente" Multiplicity="*" />
+          <End Role="ClientePF" Type="EPISistemaModel.Store.ClientePF" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Profissao">
               <PropertyRef Name="IdProfissao" />
             </Principal>
-            <Dependent Role="Cliente">
+            <Dependent Role="ClientePF">
               <PropertyRef Name="IdProfisao" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Cliente_TipoCliente">
-          <End Role="TipoCliente" Type="EPISistemaModel.Store.TipoCliente" Multiplicity="0..1" />
-          <End Role="Cliente" Type="EPISistemaModel.Store.Cliente" Multiplicity="*" />
+        <Association Name="FK_ClientePF_TipoCliente">
+          <End Role="TipoCliente" Type="EPISistemaModel.Store.TipoCliente" Multiplicity="1" />
+          <End Role="ClientePF" Type="EPISistemaModel.Store.ClientePF" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TipoCliente">
               <PropertyRef Name="IdTipoCliente" />
             </Principal>
-            <Dependent Role="Cliente">
+            <Dependent Role="ClientePF">
               <PropertyRef Name="IdTipoCliente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Cliente_TipoEndereco">
-          <End Role="TipoEndereco" Type="EPISistemaModel.Store.TipoEndereco" Multiplicity="0..1" />
-          <End Role="Cliente" Type="EPISistemaModel.Store.Cliente" Multiplicity="*" />
+        <Association Name="FK_ClientePF_TipoEndereco">
+          <End Role="TipoEndereco" Type="EPISistemaModel.Store.TipoEndereco" Multiplicity="1" />
+          <End Role="ClientePF" Type="EPISistemaModel.Store.ClientePF" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TipoEndereco">
               <PropertyRef Name="IdTipoEndereco" />
             </Principal>
-            <Dependent Role="Cliente">
+            <Dependent Role="ClientePF">
               <PropertyRef Name="IdTipoEndereco" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Cliente_TipoSegmento">
+        <Association Name="FK_ClientePJ_TipoCliente">
+          <End Role="TipoCliente" Type="EPISistemaModel.Store.TipoCliente" Multiplicity="1" />
+          <End Role="ClientePJ" Type="EPISistemaModel.Store.ClientePJ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoCliente">
+              <PropertyRef Name="IdTipoCliente" />
+            </Principal>
+            <Dependent Role="ClientePJ">
+              <PropertyRef Name="IdTipoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientePJ_TipoEndereco">
+          <End Role="TipoEndereco" Type="EPISistemaModel.Store.TipoEndereco" Multiplicity="1" />
+          <End Role="ClientePJ" Type="EPISistemaModel.Store.ClientePJ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEndereco">
+              <PropertyRef Name="IdTipoEndereco" />
+            </Principal>
+            <Dependent Role="ClientePJ">
+              <PropertyRef Name="IdTipoEndereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientePJ_TipoSegmento">
           <End Role="TipoSegmento" Type="EPISistemaModel.Store.TipoSegmento" Multiplicity="0..1" />
-          <End Role="Cliente" Type="EPISistemaModel.Store.Cliente" Multiplicity="*" />
+          <End Role="ClientePJ" Type="EPISistemaModel.Store.ClientePJ" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TipoSegmento">
               <PropertyRef Name="IdTipoSegmento" />
             </Principal>
-            <Dependent Role="Cliente">
+            <Dependent Role="ClientePJ">
               <PropertyRef Name="IdTipoSegmento" />
             </Dependent>
           </ReferentialConstraint>
@@ -810,18 +886,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ItemPedido_Pedido">
-          <End Role="Pedido" Type="EPISistemaModel.Store.Pedido" Multiplicity="1" />
-          <End Role="ItemPedido" Type="EPISistemaModel.Store.ItemPedido" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pedido">
-              <PropertyRef Name="IdPedido" />
-            </Principal>
-            <Dependent Role="ItemPedido">
-              <PropertyRef Name="IdPedido" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ItemPedido_Praga">
           <End Role="Praga" Type="EPISistemaModel.Store.Praga" Multiplicity="1" />
           <End Role="ItemPedido" Type="EPISistemaModel.Store.ItemPedido" Multiplicity="*" />
@@ -843,6 +907,30 @@
             </Principal>
             <Dependent Role="ItemPedido">
               <PropertyRef Name="IdTipoServico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListaPedido_ItemPedido">
+          <End Role="ItemPedido" Type="EPISistemaModel.Store.ItemPedido" Multiplicity="1" />
+          <End Role="ListaPedido" Type="EPISistemaModel.Store.ListaPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemPedido">
+              <PropertyRef Name="IdItemPedido" />
+            </Principal>
+            <Dependent Role="ListaPedido">
+              <PropertyRef Name="IdListaPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListaPedido_Pedido">
+          <End Role="Pedido" Type="EPISistemaModel.Store.Pedido" Multiplicity="1" />
+          <End Role="ListaPedido" Type="EPISistemaModel.Store.ListaPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedido">
+              <PropertyRef Name="IdPedido" />
+            </Principal>
+            <Dependent Role="ListaPedido">
+              <PropertyRef Name="IdPedido" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -891,18 +979,6 @@
             </Principal>
             <Dependent Role="Orcamento">
               <PropertyRef Name="IdProduto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Pedido_Cliente">
-          <End Role="Cliente" Type="EPISistemaModel.Store.Cliente" Multiplicity="0..1" />
-          <End Role="Pedido" Type="EPISistemaModel.Store.Pedido" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Cliente">
-              <PropertyRef Name="IdCliente" />
-            </Principal>
-            <Dependent Role="Pedido">
-              <PropertyRef Name="IdCliente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1014,7 +1090,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EPISistemaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1024,7 +1101,6 @@
           <EntitySet Name="AreaAtividade" EntityType="EPISistemaModel.AreaAtividade" />
           <EntitySet Name="Beneficio" EntityType="EPISistemaModel.Beneficio" />
           <EntitySet Name="Cidade" EntityType="EPISistemaModel.Cidade" />
-          <EntitySet Name="Cliente" EntityType="EPISistemaModel.Cliente" />
           <EntitySet Name="Departamento" EntityType="EPISistemaModel.Departamento" />
           <EntitySet Name="Diluente" EntityType="EPISistemaModel.Diluente" />
           <EntitySet Name="Estado" EntityType="EPISistemaModel.Estado" />
@@ -1046,6 +1122,8 @@
           <EntitySet Name="Usuario" EntityType="EPISistemaModel.Usuario" />
           <EntitySet Name="Vetor" EntityType="EPISistemaModel.Vetor" />
           <EntitySet Name="Agendamento" EntityType="EPISistemaModel.Agendamento" />
+          <EntitySet Name="ClientePF" EntityType="EPISistemaModel.ClientePF" />
+          <EntitySet Name="ClientePJ" EntityType="EPISistemaModel.ClientePJ" />
           <EntitySet Name="Disponibilidade" EntityType="EPISistemaModel.Disponibilidade" />
           <EntitySet Name="FormaPagamento" EntityType="EPISistemaModel.FormaPagamento" />
           <EntitySet Name="ItemPedido" EntityType="EPISistemaModel.ItemPedido" />
@@ -1065,30 +1143,6 @@
           <AssociationSet Name="FK_Cidade_Estado" Association="EPISistemaModel.FK_Cidade_Estado">
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Cidade" EntitySet="Cidade" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cliente_Cidade" Association="EPISistemaModel.FK_Cliente_Cidade">
-            <End Role="Cidade" EntitySet="Cidade" />
-            <End Role="Cliente" EntitySet="Cliente" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cliente_Profissao" Association="EPISistemaModel.FK_Cliente_Profissao">
-            <End Role="Profissao" EntitySet="Profissao" />
-            <End Role="Cliente" EntitySet="Cliente" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cliente_TipoCliente" Association="EPISistemaModel.FK_Cliente_TipoCliente">
-            <End Role="TipoCliente" EntitySet="TipoCliente" />
-            <End Role="Cliente" EntitySet="Cliente" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cliente_TipoEndereco" Association="EPISistemaModel.FK_Cliente_TipoEndereco">
-            <End Role="TipoEndereco" EntitySet="TipoEndereco" />
-            <End Role="Cliente" EntitySet="Cliente" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cliente_TipoSegmento" Association="EPISistemaModel.FK_Cliente_TipoSegmento">
-            <End Role="TipoSegmento" EntitySet="TipoSegmento" />
-            <End Role="Cliente" EntitySet="Cliente" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Pedido_Cliente" Association="EPISistemaModel.FK_Pedido_Cliente">
-            <End Role="Cliente" EntitySet="Cliente" />
-            <End Role="Pedido" EntitySet="Pedido" />
           </AssociationSet>
           <AssociationSet Name="FK_Funcionario_Departamento" Association="EPISistemaModel.FK_Funcionario_Departamento">
             <End Role="Departamento" EntitySet="Departamento" />
@@ -1134,6 +1188,10 @@
             <End Role="TipoPraga" EntitySet="TipoPraga" />
             <End Role="Praga" EntitySet="Praga" />
           </AssociationSet>
+          <AssociationSet Name="FK_ClientePF_Profissao" Association="EPISistemaModel.FK_ClientePF_Profissao">
+            <End Role="Profissao" EntitySet="Profissao" />
+            <End Role="ClientePF" EntitySet="ClientePF" />
+          </AssociationSet>
           <AssociationSet Name="FK_ItemPedido_TipoServico" Association="EPISistemaModel.FK_ItemPedido_TipoServico">
             <End Role="TipoServico" EntitySet="TipoServico" />
             <End Role="ItemPedido" EntitySet="ItemPedido" />
@@ -1154,13 +1212,29 @@
             <End Role="Agendamento" EntitySet="Agendamento" />
             <End Role="Orcamento" EntitySet="Orcamento" />
           </AssociationSet>
+          <AssociationSet Name="FK_ClientePF_TipoCliente" Association="EPISistemaModel.FK_ClientePF_TipoCliente">
+            <End Role="TipoCliente" EntitySet="TipoCliente" />
+            <End Role="ClientePF" EntitySet="ClientePF" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientePF_TipoEndereco" Association="EPISistemaModel.FK_ClientePF_TipoEndereco">
+            <End Role="TipoEndereco" EntitySet="TipoEndereco" />
+            <End Role="ClientePF" EntitySet="ClientePF" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientePJ_TipoCliente" Association="EPISistemaModel.FK_ClientePJ_TipoCliente">
+            <End Role="TipoCliente" EntitySet="TipoCliente" />
+            <End Role="ClientePJ" EntitySet="ClientePJ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientePJ_TipoEndereco" Association="EPISistemaModel.FK_ClientePJ_TipoEndereco">
+            <End Role="TipoEndereco" EntitySet="TipoEndereco" />
+            <End Role="ClientePJ" EntitySet="ClientePJ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientePJ_TipoSegmento" Association="EPISistemaModel.FK_ClientePJ_TipoSegmento">
+            <End Role="TipoSegmento" EntitySet="TipoSegmento" />
+            <End Role="ClientePJ" EntitySet="ClientePJ" />
+          </AssociationSet>
           <AssociationSet Name="FK_Orcamento_FormaPagamento" Association="EPISistemaModel.FK_Orcamento_FormaPagamento">
             <End Role="FormaPagamento" EntitySet="FormaPagamento" />
             <End Role="Orcamento" EntitySet="Orcamento" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ItemPedido_Pedido" Association="EPISistemaModel.FK_ItemPedido_Pedido">
-            <End Role="Pedido" EntitySet="Pedido" />
-            <End Role="ItemPedido" EntitySet="ItemPedido" />
           </AssociationSet>
           <AssociationSet Name="FK_Orcamento_Pedido" Association="EPISistemaModel.FK_Orcamento_Pedido">
             <End Role="Pedido" EntitySet="Pedido" />
@@ -1182,7 +1256,10 @@
             <End Role="Perfil" EntitySet="Perfil" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
-          <EntitySet Name="ClientePF" EntityType="EPISistemaModel.ClientePF" />
+          <AssociationSet Name="ListaPedido" Association="EPISistemaModel.ListaPedido">
+            <End Role="ItemPedido" EntitySet="ItemPedido" />
+            <End Role="Pedido" EntitySet="Pedido" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Acao">
           <Key>
@@ -1224,57 +1301,6 @@
           <Property Name="IdEstado" Type="Int32" Nullable="false" />
           <Property Name="Cidade1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Estado" Relationship="EPISistemaModel.FK_Cidade_Estado" FromRole="Cidade" ToRole="Estado" />
-          <NavigationProperty Name="Cliente" Relationship="EPISistemaModel.FK_Cliente_Cidade" FromRole="Cidade" ToRole="Cliente" />
-        </EntityType>
-        <EntityType Name="Cliente">
-          <Key>
-            <PropertyRef Name="IdCliente" />
-          </Key>
-          <Property Name="IdCliente" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="IdTipoCliente" Type="Int32" />
-          <Property Name="IdProfisao" Type="Int32" />
-          <Property Name="Nome" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
-          <Property Name="CPF" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
-          <Property Name="RG" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
-          <Property Name="DataExpedicao" Type="DateTime" Precision="3" />
-          <Property Name="OrgaoEmissor" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
-          <Property Name="CNH" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
-          <Property Name="DataNascimento" Type="DateTime" Precision="3" />
-          <Property Name="Sexo" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
-          <Property Name="EMail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="NomeFantasia" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
-          <Property Name="RazaoSocial" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
-          <Property Name="CNPJ" Type="String" MaxLength="18" Unicode="false" FixedLength="false" />
-          <Property Name="IdTipoSegmento" Type="Int32" />
-          <Property Name="AreaAtividade" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
-          <Property Name="NomeSocios" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="DataFundacao" Type="DateTime" Precision="3" />
-          <Property Name="NumFuncionarios" Type="Int32" />
-          <Property Name="InscEsdual" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
-          <Property Name="InsMunicipal" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
-          <Property Name="Site" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="Matriz" Type="Boolean" />
-          <Property Name="GrupoEmpresarial" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="IdCidade" Type="Int32" />
-          <Property Name="IdTipoEndereco" Type="Int32" />
-          <Property Name="Endereco" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="Numero" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Complemento" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="Bairro" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="CEP" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
-          <Property Name="PontoReferencia" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="FoneContato" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
-          <Property Name="CelContato" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
-          <Property Name="FoneComlContato" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
-          <Property Name="DataCadastro" Type="DateTime" Precision="3" />
-          <Property Name="DataAtualizacao" Type="DateTime" Precision="3" />
-          <Property Name="Status" Type="Int32" />
-          <NavigationProperty Name="Cidade" Relationship="EPISistemaModel.FK_Cliente_Cidade" FromRole="Cliente" ToRole="Cidade" />
-          <NavigationProperty Name="Profissao" Relationship="EPISistemaModel.FK_Cliente_Profissao" FromRole="Cliente" ToRole="Profissao" />
-          <NavigationProperty Name="TipoCliente" Relationship="EPISistemaModel.FK_Cliente_TipoCliente" FromRole="Cliente" ToRole="TipoCliente" />
-          <NavigationProperty Name="TipoEndereco" Relationship="EPISistemaModel.FK_Cliente_TipoEndereco" FromRole="Cliente" ToRole="TipoEndereco" />
-          <NavigationProperty Name="TipoSegmento" Relationship="EPISistemaModel.FK_Cliente_TipoSegmento" FromRole="Cliente" ToRole="TipoSegmento" />
-          <NavigationProperty Name="Pedido" Relationship="EPISistemaModel.FK_Pedido_Cliente" FromRole="Cliente" ToRole="Pedido" />
         </EntityType>
         <EntityType Name="Departamento">
           <Key>
@@ -1406,8 +1432,8 @@
           <Property Name="IdProfissao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="CodProfissao" Type="Int32" Nullable="false" />
           <Property Name="Profissao1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Cliente" Relationship="EPISistemaModel.FK_Cliente_Profissao" FromRole="Profissao" ToRole="Cliente" />
           <NavigationProperty Name="Funcionario" Relationship="EPISistemaModel.FK_Funcionario_Profissao" FromRole="Profissao" ToRole="Funcionario" />
+          <NavigationProperty Name="ClientePF" Relationship="EPISistemaModel.FK_ClientePF_Profissao" FromRole="Profissao" ToRole="ClientePF" />
         </EntityType>
         <EntityType Name="RegimeContratacao">
           <Key>
@@ -1515,6 +1541,98 @@
           <NavigationProperty Name="StatusAgendamento" Relationship="EPISistemaModel.FK_Agendamento_StatusAgendamento" FromRole="Agendamento" ToRole="StatusAgendamento" />
           <NavigationProperty Name="Orcamento" Relationship="EPISistemaModel.FK_Orcamento_Agendamento" FromRole="Agendamento" ToRole="Orcamento" />
         </EntityType>
+        <EntityType Name="ClientePF">
+          <Key>
+            <PropertyRef Name="IdClientePF" />
+            <PropertyRef Name="IdTipoCliente" />
+            <PropertyRef Name="Nome" />
+            <PropertyRef Name="CPF" />
+            <PropertyRef Name="RG" />
+            <PropertyRef Name="DataExpedicao" />
+            <PropertyRef Name="OrgaoEmissor" />
+            <PropertyRef Name="DataNascimento" />
+            <PropertyRef Name="Sexo" />
+            <PropertyRef Name="IdTipoEndereco" />
+            <PropertyRef Name="Endereco" />
+            <PropertyRef Name="Numero" />
+            <PropertyRef Name="Bairro" />
+            <PropertyRef Name="CEP" />
+            <PropertyRef Name="IdEstado" />
+            <PropertyRef Name="IdCidade" />
+            <PropertyRef Name="FoneContato" />
+            <PropertyRef Name="DataCadastro" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="IdClientePF" Type="Int32" Nullable="false" />
+          <Property Name="IdTipoCliente" Type="Int32" Nullable="false" />
+          <Property Name="IdProfisao" Type="Int32" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="CPF" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+          <Property Name="RG" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="DataExpedicao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OrgaoEmissor" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="CNH" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="DataNascimento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="EMail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IdTipoEndereco" Type="Int32" Nullable="false" />
+          <Property Name="Endereco" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Numero" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Complemento" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Bairro" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CEP" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="IdEstado" Type="Int32" Nullable="false" />
+          <Property Name="IdCidade" Type="Int32" Nullable="false" />
+          <Property Name="PontoReferencia" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FoneContato" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="CelContato" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="FoneComlContato" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="DataCadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataAtualizacao" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Profissao" Relationship="EPISistemaModel.FK_ClientePF_Profissao" FromRole="ClientePF" ToRole="Profissao" />
+          <NavigationProperty Name="TipoCliente" Relationship="EPISistemaModel.FK_ClientePF_TipoCliente" FromRole="ClientePF" ToRole="TipoCliente" />
+          <NavigationProperty Name="TipoEndereco" Relationship="EPISistemaModel.FK_ClientePF_TipoEndereco" FromRole="ClientePF" ToRole="TipoEndereco" />
+        </EntityType>
+        <EntityType Name="ClientePJ">
+          <Key>
+            <PropertyRef Name="IdClientePJ" />
+          </Key>
+          <Property Name="IdClientePJ" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdTipoCliente" Type="Int32" Nullable="false" />
+          <Property Name="NomeFantasia" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="RazaoSocial" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="CNPJ" Type="String" Nullable="false" MaxLength="18" Unicode="false" FixedLength="false" />
+          <Property Name="IdTipoSegmento" Type="Int32" />
+          <Property Name="AreaAtividade" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="NomeSocios" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="DataFundacao" Type="DateTime" Precision="3" />
+          <Property Name="NumFuncionarios" Type="Int32" />
+          <Property Name="InscEsdual" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="InsMunicipal" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="Site" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Matriz" Type="Boolean" />
+          <Property Name="GrupoEmpresarial" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IdTipoEndereco" Type="Int32" Nullable="false" />
+          <Property Name="Endereco" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Numero" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Complemento" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Bairro" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CEP" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="IdEstado" Type="Int32" Nullable="false" />
+          <Property Name="IdCidade" Type="Int32" Nullable="false" />
+          <Property Name="PontoReferencia" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FoneContato" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="CelContato" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="FoneComlContato" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="DataCadastro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataAtualizacao" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TipoCliente" Relationship="EPISistemaModel.FK_ClientePJ_TipoCliente" FromRole="ClientePJ" ToRole="TipoCliente" />
+          <NavigationProperty Name="TipoEndereco" Relationship="EPISistemaModel.FK_ClientePJ_TipoEndereco" FromRole="ClientePJ" ToRole="TipoEndereco" />
+          <NavigationProperty Name="TipoSegmento" Relationship="EPISistemaModel.FK_ClientePJ_TipoSegmento" FromRole="ClientePJ" ToRole="TipoSegmento" />
+        </EntityType>
         <EntityType Name="Disponibilidade">
           <Key>
             <PropertyRef Name="IdDisponibilidade" />
@@ -1536,7 +1654,7 @@
             <PropertyRef Name="IdItemPedido" />
           </Key>
           <Property Name="IdItemPedido" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="IdPedido" Type="Int32" Nullable="false" />
+          <Property Name="IdListaPedido" Type="Int32" Nullable="false" />
           <Property Name="IdPraga" Type="Int32" Nullable="false" />
           <Property Name="IdEnderecoAplicacao" Type="Int32" />
           <Property Name="IdLocalAplicacao" Type="Int32" Nullable="false" />
@@ -1544,7 +1662,7 @@
           <NavigationProperty Name="LocalAplicacao" Relationship="EPISistemaModel.FK_ItemPedido_LocalAplicacao" FromRole="ItemPedido" ToRole="LocalAplicacao" />
           <NavigationProperty Name="Praga" Relationship="EPISistemaModel.FK_ItemPedido_Praga" FromRole="ItemPedido" ToRole="Praga" />
           <NavigationProperty Name="TipoServico" Relationship="EPISistemaModel.FK_ItemPedido_TipoServico" FromRole="ItemPedido" ToRole="TipoServico" />
-          <NavigationProperty Name="Pedido" Relationship="EPISistemaModel.FK_ItemPedido_Pedido" FromRole="ItemPedido" ToRole="Pedido" />
+          <NavigationProperty Name="Pedido" Relationship="EPISistemaModel.ListaPedido" FromRole="ItemPedido" ToRole="Pedido" />
         </EntityType>
         <EntityType Name="Orcamento">
           <Key>
@@ -1567,13 +1685,15 @@
             <PropertyRef Name="IdPedido" />
           </Key>
           <Property Name="IdPedido" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="IdCliente" Type="Int32" />
+          <Property Name="IdClientePF" Type="Int32" Nullable="false" />
+          <Property Name="IdClientePJ" Type="Int32" Nullable="false" />
+          <Property Name="IdTipoCliente" Type="Int32" />
           <Property Name="DtPedido" Type="DateTime" Precision="3" />
+          <Property Name="IdListaPedido" Type="Int32" Nullable="false" />
           <Property Name="IdStatusPedido" Type="Int32" />
-          <NavigationProperty Name="Cliente" Relationship="EPISistemaModel.FK_Pedido_Cliente" FromRole="Pedido" ToRole="Cliente" />
-          <NavigationProperty Name="ItemPedido" Relationship="EPISistemaModel.FK_ItemPedido_Pedido" FromRole="Pedido" ToRole="ItemPedido" />
           <NavigationProperty Name="Orcamento" Relationship="EPISistemaModel.FK_Orcamento_Pedido" FromRole="Pedido" ToRole="Orcamento" />
           <NavigationProperty Name="StatusPedido" Relationship="EPISistemaModel.FK_Pedido_StatusPedido" FromRole="Pedido" ToRole="StatusPedido" />
+          <NavigationProperty Name="ItemPedido" Relationship="EPISistemaModel.ListaPedido" FromRole="Pedido" ToRole="ItemPedido" />
         </EntityType>
         <EntityType Name="Periodo">
           <Key>
@@ -1614,7 +1734,8 @@
           </Key>
           <Property Name="IdTipoCliente" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="TipoCliente1" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Cliente" Relationship="EPISistemaModel.FK_Cliente_TipoCliente" FromRole="TipoCliente" ToRole="Cliente" />
+          <NavigationProperty Name="ClientePF" Relationship="EPISistemaModel.FK_ClientePF_TipoCliente" FromRole="TipoCliente" ToRole="ClientePF" />
+          <NavigationProperty Name="ClientePJ" Relationship="EPISistemaModel.FK_ClientePJ_TipoCliente" FromRole="TipoCliente" ToRole="ClientePJ" />
         </EntityType>
         <EntityType Name="TipoEndereco">
           <Key>
@@ -1622,7 +1743,8 @@
           </Key>
           <Property Name="IdTipoEndereco" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="TipoEndereco1" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Cliente" Relationship="EPISistemaModel.FK_Cliente_TipoEndereco" FromRole="TipoEndereco" ToRole="Cliente" />
+          <NavigationProperty Name="ClientePF" Relationship="EPISistemaModel.FK_ClientePF_TipoEndereco" FromRole="TipoEndereco" ToRole="ClientePF" />
+          <NavigationProperty Name="ClientePJ" Relationship="EPISistemaModel.FK_ClientePJ_TipoEndereco" FromRole="TipoEndereco" ToRole="ClientePJ" />
         </EntityType>
         <EntityType Name="TipoSegmento">
           <Key>
@@ -1630,7 +1752,7 @@
           </Key>
           <Property Name="IdTipoSegmento" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="TipoSegmento1" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Cliente" Relationship="EPISistemaModel.FK_Cliente_TipoSegmento" FromRole="TipoSegmento" ToRole="Cliente" />
+          <NavigationProperty Name="ClientePJ" Relationship="EPISistemaModel.FK_ClientePJ_TipoSegmento" FromRole="TipoSegmento" ToRole="ClientePJ" />
         </EntityType>
         <Association Name="FK_Funcionario_Beneficio">
           <End Role="Beneficio" Type="EPISistemaModel.Beneficio" Multiplicity="0..1" />
@@ -1653,78 +1775,6 @@
             </Principal>
             <Dependent Role="Cidade">
               <PropertyRef Name="IdEstado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cliente_Cidade">
-          <End Role="Cidade" Type="EPISistemaModel.Cidade" Multiplicity="0..1" />
-          <End Role="Cliente" Type="EPISistemaModel.Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Cidade">
-              <PropertyRef Name="IdCidade" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="IdCidade" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cliente_Profissao">
-          <End Role="Profissao" Type="EPISistemaModel.Profissao" Multiplicity="0..1" />
-          <End Role="Cliente" Type="EPISistemaModel.Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Profissao">
-              <PropertyRef Name="IdProfissao" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="IdProfisao" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cliente_TipoCliente">
-          <End Role="TipoCliente" Type="EPISistemaModel.TipoCliente" Multiplicity="0..1" />
-          <End Role="Cliente" Type="EPISistemaModel.Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TipoCliente">
-              <PropertyRef Name="IdTipoCliente" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="IdTipoCliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cliente_TipoEndereco">
-          <End Role="TipoEndereco" Type="EPISistemaModel.TipoEndereco" Multiplicity="0..1" />
-          <End Role="Cliente" Type="EPISistemaModel.Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TipoEndereco">
-              <PropertyRef Name="IdTipoEndereco" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="IdTipoEndereco" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cliente_TipoSegmento">
-          <End Role="TipoSegmento" Type="EPISistemaModel.TipoSegmento" Multiplicity="0..1" />
-          <End Role="Cliente" Type="EPISistemaModel.Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TipoSegmento">
-              <PropertyRef Name="IdTipoSegmento" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="IdTipoSegmento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Pedido_Cliente">
-          <End Role="Cliente" Type="EPISistemaModel.Cliente" Multiplicity="0..1" />
-          <End Role="Pedido" Type="EPISistemaModel.Pedido" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Cliente">
-              <PropertyRef Name="IdCliente" />
-            </Principal>
-            <Dependent Role="Pedido">
-              <PropertyRef Name="IdCliente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1860,6 +1910,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ClientePF_Profissao">
+          <End Role="Profissao" Type="EPISistemaModel.Profissao" Multiplicity="0..1" />
+          <End Role="ClientePF" Type="EPISistemaModel.ClientePF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profissao">
+              <PropertyRef Name="IdProfissao" />
+            </Principal>
+            <Dependent Role="ClientePF">
+              <PropertyRef Name="IdProfisao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ItemPedido_TipoServico">
           <End Role="TipoServico" Type="EPISistemaModel.TipoServico" Multiplicity="1" />
           <End Role="ItemPedido" Type="EPISistemaModel.ItemPedido" Multiplicity="*" />
@@ -1920,6 +1982,66 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ClientePF_TipoCliente">
+          <End Role="TipoCliente" Type="EPISistemaModel.TipoCliente" Multiplicity="1" />
+          <End Role="ClientePF" Type="EPISistemaModel.ClientePF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoCliente">
+              <PropertyRef Name="IdTipoCliente" />
+            </Principal>
+            <Dependent Role="ClientePF">
+              <PropertyRef Name="IdTipoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientePF_TipoEndereco">
+          <End Role="TipoEndereco" Type="EPISistemaModel.TipoEndereco" Multiplicity="1" />
+          <End Role="ClientePF" Type="EPISistemaModel.ClientePF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEndereco">
+              <PropertyRef Name="IdTipoEndereco" />
+            </Principal>
+            <Dependent Role="ClientePF">
+              <PropertyRef Name="IdTipoEndereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientePJ_TipoCliente">
+          <End Role="TipoCliente" Type="EPISistemaModel.TipoCliente" Multiplicity="1" />
+          <End Role="ClientePJ" Type="EPISistemaModel.ClientePJ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoCliente">
+              <PropertyRef Name="IdTipoCliente" />
+            </Principal>
+            <Dependent Role="ClientePJ">
+              <PropertyRef Name="IdTipoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientePJ_TipoEndereco">
+          <End Role="TipoEndereco" Type="EPISistemaModel.TipoEndereco" Multiplicity="1" />
+          <End Role="ClientePJ" Type="EPISistemaModel.ClientePJ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEndereco">
+              <PropertyRef Name="IdTipoEndereco" />
+            </Principal>
+            <Dependent Role="ClientePJ">
+              <PropertyRef Name="IdTipoEndereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientePJ_TipoSegmento">
+          <End Role="TipoSegmento" Type="EPISistemaModel.TipoSegmento" Multiplicity="0..1" />
+          <End Role="ClientePJ" Type="EPISistemaModel.ClientePJ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSegmento">
+              <PropertyRef Name="IdTipoSegmento" />
+            </Principal>
+            <Dependent Role="ClientePJ">
+              <PropertyRef Name="IdTipoSegmento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Orcamento_FormaPagamento">
           <End Role="FormaPagamento" Type="EPISistemaModel.FormaPagamento" Multiplicity="1" />
           <End Role="Orcamento" Type="EPISistemaModel.Orcamento" Multiplicity="*" />
@@ -1929,18 +2051,6 @@
             </Principal>
             <Dependent Role="Orcamento">
               <PropertyRef Name="IdFormaPagamento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ItemPedido_Pedido">
-          <End Role="Pedido" Type="EPISistemaModel.Pedido" Multiplicity="1" />
-          <End Role="ItemPedido" Type="EPISistemaModel.ItemPedido" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pedido">
-              <PropertyRef Name="IdPedido" />
-            </Principal>
-            <Dependent Role="ItemPedido">
-              <PropertyRef Name="IdPedido" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1988,23 +2098,10 @@
           <End Role="Perfil" Type="EPISistemaModel.Perfil" Multiplicity="*" />
           <End Role="Usuario" Type="EPISistemaModel.Usuario" Multiplicity="*" />
         </Association>
-        <EntityType Name="ClientePF">
-          <Key>
-            <PropertyRef Name="IdClientePF" />
-          </Key>
-          <Property Type="Int32" Name="IdClientePF" Nullable="false" />
-          <Property Type="Int32" Name="IdTipoCliente" />
-          <Property Type="Int32" Name="IdProfisao" />
-          <Property Type="String" Name="Nome" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="CPF" MaxLength="14" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="RG" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="DataExpedicao" Precision="3" />
-          <Property Type="String" Name="OrgaoEmissor" MaxLength="6" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="CNH" MaxLength="11" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="DataNascimento" Precision="3" />
-          <Property Type="String" Name="Sexo" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="EMail" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
+        <Association Name="ListaPedido">
+          <End Role="ItemPedido" Type="EPISistemaModel.ItemPedido" Multiplicity="*" />
+          <End Role="Pedido" Type="EPISistemaModel.Pedido" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2052,51 +2149,6 @@
                 <ScalarProperty Name="IdCidade" ColumnName="IdCidade" />
                 <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
                 <ScalarProperty Name="Cidade1" ColumnName="Cidade" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Cliente">
-            <EntityTypeMapping TypeName="EPISistemaModel.Cliente">
-              <MappingFragment StoreEntitySet="Cliente">
-                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
-                <ScalarProperty Name="IdTipoCliente" ColumnName="IdTipoCliente" />
-                <ScalarProperty Name="IdProfisao" ColumnName="IdProfisao" />
-                <ScalarProperty Name="Nome" ColumnName="Nome" />
-                <ScalarProperty Name="CPF" ColumnName="CPF" />
-                <ScalarProperty Name="RG" ColumnName="RG" />
-                <ScalarProperty Name="DataExpedicao" ColumnName="DataExpedicao" />
-                <ScalarProperty Name="OrgaoEmissor" ColumnName="OrgaoEmissor" />
-                <ScalarProperty Name="CNH" ColumnName="CNH" />
-                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
-                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
-                <ScalarProperty Name="EMail" ColumnName="EMail" />
-                <ScalarProperty Name="NomeFantasia" ColumnName="NomeFantasia" />
-                <ScalarProperty Name="RazaoSocial" ColumnName="RazaoSocial" />
-                <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
-                <ScalarProperty Name="IdTipoSegmento" ColumnName="IdTipoSegmento" />
-                <ScalarProperty Name="AreaAtividade" ColumnName="AreaAtividade" />
-                <ScalarProperty Name="NomeSocios" ColumnName="NomeSocios" />
-                <ScalarProperty Name="DataFundacao" ColumnName="DataFundacao" />
-                <ScalarProperty Name="NumFuncionarios" ColumnName="NumFuncionarios" />
-                <ScalarProperty Name="InscEsdual" ColumnName="InscEsdual" />
-                <ScalarProperty Name="InsMunicipal" ColumnName="InsMunicipal" />
-                <ScalarProperty Name="Site" ColumnName="Site" />
-                <ScalarProperty Name="Matriz" ColumnName="Matriz" />
-                <ScalarProperty Name="GrupoEmpresarial" ColumnName="GrupoEmpresarial" />
-                <ScalarProperty Name="IdCidade" ColumnName="IdCidade" />
-                <ScalarProperty Name="IdTipoEndereco" ColumnName="IdTipoEndereco" />
-                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
-                <ScalarProperty Name="Numero" ColumnName="Numero" />
-                <ScalarProperty Name="Complemento" ColumnName="Complemento" />
-                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
-                <ScalarProperty Name="CEP" ColumnName="CEP" />
-                <ScalarProperty Name="PontoReferencia" ColumnName="PontoReferencia" />
-                <ScalarProperty Name="FoneContato" ColumnName="FoneContato" />
-                <ScalarProperty Name="CelContato" ColumnName="CelContato" />
-                <ScalarProperty Name="FoneComlContato" ColumnName="FoneComlContato" />
-                <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
-                <ScalarProperty Name="DataAtualizacao" ColumnName="DataAtualizacao" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2328,6 +2380,76 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ClientePF">
+            <EntityTypeMapping TypeName="EPISistemaModel.ClientePF">
+              <MappingFragment StoreEntitySet="ClientePF">
+                <ScalarProperty Name="IdClientePF" ColumnName="IdClientePF" />
+                <ScalarProperty Name="IdTipoCliente" ColumnName="IdTipoCliente" />
+                <ScalarProperty Name="IdProfisao" ColumnName="IdProfisao" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="RG" ColumnName="RG" />
+                <ScalarProperty Name="DataExpedicao" ColumnName="DataExpedicao" />
+                <ScalarProperty Name="OrgaoEmissor" ColumnName="OrgaoEmissor" />
+                <ScalarProperty Name="CNH" ColumnName="CNH" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="IdTipoEndereco" ColumnName="IdTipoEndereco" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Complemento" ColumnName="Complemento" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="IdCidade" ColumnName="IdCidade" />
+                <ScalarProperty Name="PontoReferencia" ColumnName="PontoReferencia" />
+                <ScalarProperty Name="FoneContato" ColumnName="FoneContato" />
+                <ScalarProperty Name="CelContato" ColumnName="CelContato" />
+                <ScalarProperty Name="FoneComlContato" ColumnName="FoneComlContato" />
+                <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+                <ScalarProperty Name="DataAtualizacao" ColumnName="DataAtualizacao" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientePJ">
+            <EntityTypeMapping TypeName="EPISistemaModel.ClientePJ">
+              <MappingFragment StoreEntitySet="ClientePJ">
+                <ScalarProperty Name="IdClientePJ" ColumnName="IdClientePJ" />
+                <ScalarProperty Name="IdTipoCliente" ColumnName="IdTipoCliente" />
+                <ScalarProperty Name="NomeFantasia" ColumnName="NomeFantasia" />
+                <ScalarProperty Name="RazaoSocial" ColumnName="RazaoSocial" />
+                <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+                <ScalarProperty Name="IdTipoSegmento" ColumnName="IdTipoSegmento" />
+                <ScalarProperty Name="AreaAtividade" ColumnName="AreaAtividade" />
+                <ScalarProperty Name="NomeSocios" ColumnName="NomeSocios" />
+                <ScalarProperty Name="DataFundacao" ColumnName="DataFundacao" />
+                <ScalarProperty Name="NumFuncionarios" ColumnName="NumFuncionarios" />
+                <ScalarProperty Name="InscEsdual" ColumnName="InscEsdual" />
+                <ScalarProperty Name="InsMunicipal" ColumnName="InsMunicipal" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Matriz" ColumnName="Matriz" />
+                <ScalarProperty Name="GrupoEmpresarial" ColumnName="GrupoEmpresarial" />
+                <ScalarProperty Name="IdTipoEndereco" ColumnName="IdTipoEndereco" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Complemento" ColumnName="Complemento" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="IdCidade" ColumnName="IdCidade" />
+                <ScalarProperty Name="PontoReferencia" ColumnName="PontoReferencia" />
+                <ScalarProperty Name="FoneContato" ColumnName="FoneContato" />
+                <ScalarProperty Name="CelContato" ColumnName="CelContato" />
+                <ScalarProperty Name="FoneComlContato" ColumnName="FoneComlContato" />
+                <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+                <ScalarProperty Name="DataAtualizacao" ColumnName="DataAtualizacao" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Disponibilidade">
             <EntityTypeMapping TypeName="EPISistemaModel.Disponibilidade">
               <MappingFragment StoreEntitySet="Disponibilidade">
@@ -2348,7 +2470,7 @@
             <EntityTypeMapping TypeName="EPISistemaModel.ItemPedido">
               <MappingFragment StoreEntitySet="ItemPedido">
                 <ScalarProperty Name="IdItemPedido" ColumnName="IdItemPedido" />
-                <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+                <ScalarProperty Name="IdListaPedido" ColumnName="IdListaPedido" />
                 <ScalarProperty Name="IdPraga" ColumnName="IdPraga" />
                 <ScalarProperty Name="IdEnderecoAplicacao" ColumnName="IdEnderecoAplicacao" />
                 <ScalarProperty Name="IdLocalAplicacao" ColumnName="IdLocalAplicacao" />
@@ -2373,8 +2495,11 @@
             <EntityTypeMapping TypeName="EPISistemaModel.Pedido">
               <MappingFragment StoreEntitySet="Pedido">
                 <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
-                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="IdClientePF" ColumnName="IdClientePF" />
+                <ScalarProperty Name="IdClientePJ" ColumnName="IdClientePJ" />
+                <ScalarProperty Name="IdTipoCliente" ColumnName="IdTipoCliente" />
                 <ScalarProperty Name="DtPedido" ColumnName="DtPedido" />
+                <ScalarProperty Name="IdListaPedido" ColumnName="IdListaPedido" />
                 <ScalarProperty Name="IdStatusPedido" ColumnName="IdStatusPedido" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2452,24 +2577,14 @@
               <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="ClientePF">
-            <EntityTypeMapping TypeName="EPISistemaModel.ClientePF">
-              <MappingFragment StoreEntitySet="ClientePF">
-                <ScalarProperty Name="EMail" ColumnName="EMail" />
-                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
-                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
-                <ScalarProperty Name="CNH" ColumnName="CNH" />
-                <ScalarProperty Name="OrgaoEmissor" ColumnName="OrgaoEmissor" />
-                <ScalarProperty Name="DataExpedicao" ColumnName="DataExpedicao" />
-                <ScalarProperty Name="RG" ColumnName="RG" />
-                <ScalarProperty Name="CPF" ColumnName="CPF" />
-                <ScalarProperty Name="Nome" ColumnName="Nome" />
-                <ScalarProperty Name="IdProfisao" ColumnName="IdProfisao" />
-                <ScalarProperty Name="IdTipoCliente" ColumnName="IdTipoCliente" />
-                <ScalarProperty Name="IdClientePF" ColumnName="IdClientePF" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+          <AssociationSetMapping Name="ListaPedido" TypeName="EPISistemaModel.ListaPedido" StoreEntitySet="ListaPedido">
+            <EndProperty Name="ItemPedido">
+              <ScalarProperty Name="IdItemPedido" ColumnName="IdListaPedido" />
+            </EndProperty>
+            <EndProperty Name="Pedido">
+              <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -14,8 +14,13 @@ namespace ERP_MVC
     
     public partial class ItemPedido
     {
+        public ItemPedido()
+        {
+            this.Pedido = new HashSet<Pedido>();
+        }
+    
         public int IdItemPedido { get; set; }
-        public int IdPedido { get; set; }
+        public int IdListaPedido { get; set; }
         public int IdPraga { get; set; }
         public Nullable<int> IdEnderecoAplicacao { get; set; }
         public int IdLocalAplicacao { get; set; }
@@ -24,6 +29,6 @@ namespace ERP_MVC
         public virtual LocalAplicacao LocalAplicacao { get; set; }
         public virtual Praga Praga { get; set; }
         public virtual TipoServico TipoServico { get; set; }
-        public virtual Pedido Pedido { get; set; }
+        public virtual ICollection<Pedido> Pedido { get; set; }
     }
 }

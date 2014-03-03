@@ -16,18 +16,20 @@ namespace ERP_MVC
     {
         public Pedido()
         {
-            this.ItemPedido = new HashSet<ItemPedido>();
             this.Orcamento = new HashSet<Orcamento>();
+            this.ItemPedido = new HashSet<ItemPedido>();
         }
     
         public int IdPedido { get; set; }
-        public Nullable<int> IdCliente { get; set; }
+        public int IdClientePF { get; set; }
+        public int IdClientePJ { get; set; }
+        public Nullable<int> IdTipoCliente { get; set; }
         public Nullable<System.DateTime> DtPedido { get; set; }
+        public int IdListaPedido { get; set; }
         public Nullable<int> IdStatusPedido { get; set; }
     
-        public virtual Cliente Cliente { get; set; }
-        public virtual ICollection<ItemPedido> ItemPedido { get; set; }
         public virtual ICollection<Orcamento> Orcamento { get; set; }
         public virtual StatusPedido StatusPedido { get; set; }
+        public virtual ICollection<ItemPedido> ItemPedido { get; set; }
     }
 }

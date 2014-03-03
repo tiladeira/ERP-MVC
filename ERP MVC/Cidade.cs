@@ -14,16 +14,10 @@ namespace ERP_MVC
     
     public partial class Cidade
     {
-        public Cidade()
-        {
-            this.Cliente = new HashSet<Cliente>();
-        }
-    
         public int IdCidade { get; set; }
         public int IdEstado { get; set; }
         public string Cidade1 { get; set; }
     
         public virtual Estado Estado { get; set; }
-        public virtual ICollection<Cliente> Cliente { get; set; }
     }
 }

@@ -16,12 +16,14 @@ namespace ERP_MVC
     {
         public TipoEndereco()
         {
-            this.Cliente = new HashSet<Cliente>();
+            this.ClientePF = new HashSet<ClientePF>();
+            this.ClientePJ = new HashSet<ClientePJ>();
         }
     
         public int IdTipoEndereco { get; set; }
         public string TipoEndereco1 { get; set; }
     
-        public virtual ICollection<Cliente> Cliente { get; set; }
+        public virtual ICollection<ClientePF> ClientePF { get; set; }
+        public virtual ICollection<ClientePJ> ClientePJ { get; set; }
     }
 }
