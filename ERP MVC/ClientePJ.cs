@@ -11,14 +11,24 @@ namespace ERP_MVC
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class ClientePJ
     {
+        [Key]
         public int IdClientePJ { get; set; }
+                
         public int IdTipoCliente { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string NomeFantasia { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string RazaoSocial { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]        
         public string CNPJ { get; set; }
+
         public Nullable<int> IdTipoSegmento { get; set; }
         public string AreaAtividade { get; set; }
         public string NomeSocios { get; set; }
@@ -27,18 +37,39 @@ namespace ERP_MVC
         public string InscEsdual { get; set; }
         public string InsMunicipal { get; set; }
         public string Site { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "Email inválido.")]
         public string Email { get; set; }
+        
         public Nullable<bool> Matriz { get; set; }
         public string GrupoEmpresarial { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public int IdTipoEndereco { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string Endereco { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string Numero { get; set; }
+
         public string Complemento { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string Bairro { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string CEP { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public int IdEstado { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public int IdCidade { get; set; }
         public string PontoReferencia { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string FoneContato { get; set; }
         public string CelContato { get; set; }
         public string FoneComlContato { get; set; }

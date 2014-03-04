@@ -1,26 +1,32 @@
 ﻿@model ERP_MVC.ClientePJ
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Novo";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    <script type="text/javascript" lang="javascript">
+        var $j = jQuery.noConflict();
+
+        $j(document).ready(function () {
+            $j("#CNPJ").mask("99.999.999/9999-99");
+            $j("#DataFundacao").mask("99/99/9999");
+            $j("#CEP").mask("99999-999");
+            $j("#FoneContato").mask("(99) 9999-9999?9");
+            $j("#CelContato").mask("(99) 9999-9999?9");
+            $j("#FoneComlContato").mask("(99) 9999-9999?9");
+        });
+    </script>
 }
 
-<h2>Create</h2>
+<h2>Criar Novo</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>ClientePJ</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IdClientePJ)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IdClientePJ)
-            @Html.ValidationMessageFor(model => model.IdClientePJ)
-        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.IdTipoCliente, "TipoCliente")
@@ -130,7 +136,12 @@
             @Html.LabelFor(model => model.Matriz)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Matriz)
+            @Html.EditorFor(model => model.Matriz,
+                new SelectList(new List<Object>{
+                    new {IdSexo = 0, Sexo = ""},
+                    new {IdSexo = 1, Sexo = "Matriz"},
+                    new {IdSexo = 2, Sexo = "Filial"}
+                }, "Matriz", "Matriz", 0)))
             @Html.ValidationMessageFor(model => model.Matriz)
         </div>
 

@@ -11,6 +11,8 @@ namespace ERP_MVC
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     
     public partial class Funcionario
     {
@@ -19,22 +21,53 @@ namespace ERP_MVC
             this.Usuario = new HashSet<Usuario>();
         }
     
+        [Key]
         public int IdFuncionario { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]  
         public string Nome { get; set; }
+
+        [Required(ErrorMessage = "*")]        
+        [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
         public System.DateTime DataNascimento { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]  
         public string Sexo { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]  
         public string CPF { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]  
         public string RG { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]  
         public string OrgEmissRG { get; set; }
+                
         public System.DateTime DataEmissRG { get; set; }
+
         public string CNH { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]  
         public int IdDepartamento { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]  
         public int IdProfissao { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]  
         public int IdNivel { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]  
         public int IdRegimeContratacao { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]  
         public System.DateTime DataAdmissao { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]  
         public Nullable<int> IdBeneficio { get; set; }
+
         public System.DateTime DataInclusao { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]  
         public Nullable<int> Status { get; set; }
     
         public virtual Beneficio Beneficio { get; set; }

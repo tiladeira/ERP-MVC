@@ -5,12 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Listagem de Clientes Pessoa Jurídica Cadastrados</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Criar Novo", "Create")
 </p>
-<table>
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.IdClientePJ)
@@ -29,79 +29,7 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.TipoSegmento.TipoSegmento1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AreaAtividade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NomeSocios)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataFundacao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumFuncionarios)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.InscEsdual)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.InsMunicipal)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Site)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Matriz)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GrupoEmpresarial)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoEndereco.TipoEndereco1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Endereco)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Numero)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Complemento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bairro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CEP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IdEstado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IdCidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PontoReferencia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FoneContato)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CelContato)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FoneComlContato)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataCadastro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataAtualizacao)
-        </th>
+        </th>        
         <th>
             @Html.DisplayNameFor(model => model.Status)
         </th>
@@ -127,86 +55,14 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TipoSegmento.TipoSegmento1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AreaAtividade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomeSocios)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataFundacao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumFuncionarios)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InscEsdual)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InsMunicipal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Site)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Matriz)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GrupoEmpresarial)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoEndereco.TipoEndereco1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Endereco)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Numero)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Complemento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Bairro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CEP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdEstado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdCidade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PontoReferencia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FoneContato)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CelContato)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FoneComlContato)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataCadastro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataAtualizacao)
-        </td>
+        </td>        
         <td>
             @Html.DisplayFor(modelItem => item.Status)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdClientePJ }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdClientePJ }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdClientePJ })
         </td>
     </tr>
 }
